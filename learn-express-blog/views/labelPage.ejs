@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>博客园首页</title>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+  <style>
+  #body {
+    position: relative;
+  }
+  #menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  }
+  a.list-group-item:hover {
+    cursor: pointer;
+  }
+  .showPointer {
+    cursor: pointer;
+  }
+
+  .archiveBox {
+    margin: 10px 0 10px 10px;
+  }
+
+  .signArchive {
+    margin: 10px;
+    display: none;
+  }
+  </style>
+
+</head>
+<body onclick="hiddenBtn()">
+<%- include('components/nav') %>
+<%- include('components/nav-setting') %>
+
+  <% var j = 0;
+    for(var item in archives) {
+      j++ %>
+      <div class="archiveBox">
+        <p onmousedown="editArchive(this,event)" id="rank<%= j %>" class="showPointer"><%= archives[item].rank %></p>
+        <% for(var i = 1; i <= archives[item].count; i++) { %>
+          <span class="label label-info showPointer" onmousedown="editArchive(this,event)" id="label<%= j %><%= i %>"><%= archives[item]['label' + i] %></span>
+        <% } %>
+      </div>
+  <% } %>
+
+<div id="menu">
+  <a class="list-group-item" id="editBtn1" data-toggle="modal" data-target="#myModal">编辑</a>
+  <a class="list-group-item" id="removeBtn1" data-toggle="modal" data-target="#myModal">删除</a>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					模态框（Modal）标题
+				</h4>
+			</div>
+			<div class="modal-body">
+				<input type="text" value="按下 ESC 按钮退出" id="modalBodyI" class="form-control" oninput="hiddenSignArchive(this)">
+        <p class="errorSign signArchive" id="signArchive">内容不能为空</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default"
+						data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary" id="btnSub">
+					提交更改
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="/js/label.js"></script>
+<%- include('footer') %>

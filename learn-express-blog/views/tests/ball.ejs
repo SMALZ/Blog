@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>beatingBall</title>
+  <style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  .box{
+    width: 500px;
+    height: 500px;
+    border: 1px solid #ccc;
+    margin: 100px auto;
+    position: relative;
+  }
+  .ball{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    margin: 100px auto;
+    background-image: linear-gradient(to bottom, rgba(190, 190 ,190, 1), rgba(100, 100 ,100 , 1));
+    animation: beating 0.8s ease-in-out infinite;
+    box-shadow:inset 2px 3px 2px 2px #aaa;
+  }
+  @keyframes beating {
+    0%{
+      top: 0;
+    }
+    50%{
+      top: 200px;
+    }
+    100%{
+      top: 0;
+    }
+  }
+  .small-shadow{
+    position: absolute;
+    width: 45px;
+    height: 20px;
+    top: 13px;
+    left: 26px;
+    border-radius: 50%;
+    background: #ccc;
+    box-shadow:inset 1px 3px 71px 18px #aaa;
+  }
+
+  .ball-shadow{
+    position: absolute;
+    margin: auto;
+    width: 100px;
+    height: 20px;
+    border-radius: 50%;
+    /*border: 1px solid #ccc;*/
+    background-image: linear-gradient(to bottom,#f1f1f1,#e4e4e4);
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    animation: shadow 0.8s ease-in-out infinite;
+  }
+  @keyframes shadow {
+    0%{
+      height: 20px;
+      width: 100px;
+      transform: translateY(0);
+    }
+    50%{
+      height: 2px;
+      width: 10px;
+      transform: translateY(-10px);
+    }
+    100%{
+      transform: translateY(0px);
+      height: 20px;
+      width: 100px;
+    }
+  }
+  .eat-box{
+    width:0;
+    height:0;
+    border:100px solid gray;
+    border-radius:100px;
+    border-right-color: #fff;
+    border-left-color: #fff;
+  }
+  .ellipse{
+    width: 200px;
+    height: 100px;
+    background: red;
+    border-radius: 100px/50px;
+  }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="ball">
+      <div class="small-shadow"></div>
+    </div>
+    <div class="ball-shadow"></div>
+  </div>
+
+  <div class="eat-box"></div>
+  <div class="ellipse"></div>
+</body>
+</html>

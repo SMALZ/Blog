@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <a href="http://www.cnblogs.com/xxcanghai/p/5189353.html">掘金(前端面试)</a>
+  <a href="#" onclick="test()">本页测试</a>
+  <a href="verticalCenter">小测试</a>
+  <a href="userInfo">添加用户信息</a>
+  <a href="dataBase">查询用户信息</a>
+  <a href="listEvent">模式</a>
+  <a href="ball">小球</a>
+  <a href="3DBOX">盒子</a>
+  <a href="btn1">按钮1</a>
+  <a href="btn2">按钮2</a>
+  <a href="learnJS">js</a>
+  <a href="ele">谁去拿外卖</a>
+  <a href="factory">工厂模式</a>
+  <a href="plane">飞机</a>
+  <a href="fileUpload">文件上传</a>
+  <a href="lagou">鼠标移动</a>
+  <a href="album">旋转</a>
+  <a href="prototype">原型</a>
+  <a href="mock">mockjs</a>
+  <script type="text/javascript">
+  // window.onload = function() {
+    // function Foo() {
+    //   getName = function (){
+    //     console.log(1);
+    //     return this;
+    //   }
+    // }
+    // Foo.getName = function (){
+    //   console.log(2);
+    // }
+    // Foo.prototype.getName = function (){
+    //   console.log(3);
+    // }
+    // var getName = function (){
+    //   console.log(4);
+    // }
+    // function getName() {
+    //   console.log(5);
+    // }
+    //
+    //
+    // Foo.getName();
+    // Foo().getName();
+    // getName();
+    // // Foo().getName();
+    // getName();
+    // new Foo.getName();
+    // new Foo().getName();
+    // new new Foo().getName();
+
+    function Foo() {
+    getName = function () { alert (1); };
+    return this;
+    }
+    Foo.getName = function () { alert (2);};
+    Foo.prototype.getName = function () { alert (3);};
+    var getName = function () { alert (4);};
+    function getName() { alert (5);}
+
+    //请写出以下输出结果：
+    function test() {
+      Foo.getName();//2
+      getName();//4
+      Foo().getName();//1
+      getName();//1
+      new Foo.getName();//2
+      new Foo().getName();//3
+      new new Foo().getName();//3
+    }
+  // }
+
+
+  </script>
+</body>
+</html>

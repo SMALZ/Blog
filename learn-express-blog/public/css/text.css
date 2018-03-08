@@ -1,0 +1,48 @@
+
+div.pager-box {
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-box-shadow:3px 3px 4px #ccc;
+  -moz-box-shadow: 3px 3px 4px #ccc;
+  -ms-box-shadow: 3px 3px 4px #ccc;
+  -o-box-shadow: 3px 3px 4px #ccc;
+  box-shadow: 3px 3px 4px #ccc;
+  display: inline-block;
+  vertical-align: top;
+  width:294px;
+  height: 300px;
+  font-size: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pager-key {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  opacity: 0.3;
+  text-align: center;
+}
+
+/*.pager-key:hover, .pager-key:focus{
+  background-color: #ccc;
+}*/
+
+div.pager-box:hover {
+  cursor: pointer;
+}
+
+.texts-icon {
+  font-size:30px !important;
+  display: none;
+}
+
+.icon-edit:hover, .icon-remove:hover {
+  color: #009a61;
+}

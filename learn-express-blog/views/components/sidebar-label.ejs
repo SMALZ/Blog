@@ -1,0 +1,28 @@
+<div class="widget">
+  <div class="widget-title">
+    <span class="title-i">
+      <span class="title-i-a"></span>
+      <span class="title-i-b"></span>
+      <span class="title-i-c"></span>
+      <span class="title-i-d"></span>
+    </span>
+    <span class="widget-label">分类目录</span>
+  </div>
+  <ul class="item-label">
+    <% ranks.forEach(function(rank){ %>
+        <li class="cat-item" style="cursor:pointer" onclick="this.children[0].click()"><a href="/archive/<%= rank %>"></a><%= rank %></li>
+    <% }) %>
+    <!-- <li class="cat-item">代码审计</li>
+    <li class="cat-item">代码审计</li>
+    <li class="cat-item">代码审计</li>
+    <li class="cat-item">代码审计</li>
+    <li class="cat-item">代码审计</li>
+    <li class="cat-item">代码审计</li>
+    <li class="cat-item">代码审计</li>
+    <li class="cat-item">代码审计</li>
+    <li class="cat-item">代码审计</li>
+    <li class="cat-item">代码审计</li>
+    <li class="cat-item">代码审计</li>
+    <li class="cat-item">代码审计</li> -->
+  </ul>
+</div>

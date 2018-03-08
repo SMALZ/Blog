@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>文件上传及拽拖上传</title>
+  <style media="screen">
+    .list-group{
+      border: 2px dashed #ccc;
+      min-height: 100px;
+      padding: 10px;
+    }
+
+    .list-group p{
+      color: #ccc;
+      line-height: 100;
+      font-style: 30px;
+      text-align: center;
+    }
+
+    img{
+      max-width: 100%;
+    }
+
+    #eventstatus{
+      margin-top: 10px;
+    }
+  </style>
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen" title="no title">
+</head>
+<body>
+  <div class="contaupiner">
+    <div class="row">
+      <ul class="list-group clearfix"></ul>
+      <form action="" name="upload">
+        <a href="javascript:;" id="selectbtn" class="btn btn-primary">上传文件</a>
+        <input type="file" name="fileselect" style="display:none" multiple>
+      </form>
+      <div id="eventstatus"></div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    window.onload = function() {
+      var fileselect = document.forms['upload']['fileselect'],
+        listGroup = document.querySelector('.list-group');
+        eventStatus = document.getElementById('eventstatus');
+
+      document.getElementById('selectbtn').addEventListener('click',function(){
+            fileselect.click();
+      },false);
+
+      fileselect.addEventListener('change',displayFileInfo,false);
+
+      function displayFileInfo(event) {
+        //获取上传文件
+          var files = event.target.files || event.dataTransfer.files;
+          for(var i=0;i<files.length;i++){
+            var file = files[i];
+            // var info = file.name + '' +(file.size/(1024*1024)).toFixed(2) + 'mb';
+            //使用document对象的createElement方法创建一个li对象
+            //js 里动态创建html
+            var li=document.createElement('li');
+            img = document.createElement('img');
+
+            url = window.URL.createObjectURL(file);
+            thumbnailContainer = document.createElement('div');
+
+            // img.setAttribute("src","url");
+            img.src = url;
+            img.classList.add('thumbnail');
+            //加载完成
+            img.onload = function(){
+              //释放url
+                window.URL.revokeObjectURL(file);
+            }
+            // li.innerHTML = info;
+            //将li 添加到ul上去，动态构造元素
+            thumbnailContainer.appendChild(img);
+            thumbnailContainer.classList.add('col-md-3');
+            listGroup.appendChild(thumbnailContainer);
+
+            //进度条
+            var progressBar = document.createElement('div'),
+                progress = document.createElement('div');
+
+            progressBar.classList.add('progress-bar');
+            progress.classList.add('progress','progress-striped','active');
+            progress.appendChild(progressBar);
+
+            var reader = new FileReader();
+            reader.readAsBinaryString(file);
+            // 开始读取
+            // eventStatus.appendChild(progress);
+            reader.onloadstart = function() {
+              eventStatus.appendChild(progress);
+            }
+              // 每次有进度的更新
+            reader.onprogress = function(event) {
+              // 加载了多少
+              var progressStatus = Math.round(event.loaded/event.total*100) + '%';
+              progressBar.style.width = progressStatus;
+            }
+
+            reader.onload = function(){
+              console.log('读取完成');
+            }
+          }
+      }
+
+      // listGroup.innerHTML = '<p class="hint">拖拽文件到这里</p>';
+      // // 添加一些事件,让listGroup具有拖拽功能
+      // listGroup.addEventListener('dragover',function(event){
+      //   document.querySelector('.hint').innerHTML = '松开文件';
+      // },false);
+      //
+      // function displayFileInfo(event) {
+      //   event.preventDefault();
+      //   var files = event.target.files || event.dataTransfer.files;
+      //   for(var i=0;i<files.length;i++){
+      //     var file = files[i];
+      //   }
+      // }
+
+    }
+  </script>
+</body>
+</html>

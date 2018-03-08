@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>栅格系统</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .container{
+    width: 1180px;
+    margin: 3em auto;
+    padding: 10px;
+  }
+
+  .row{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;;
+    -ms-flex-wrap: wrap;;
+    flex-wrap: wrap;
+    margin: 0 -10px 20px;
+  }
+
+  .demo{
+    display: block;
+    background-color: #0c3934;
+    text-align: center;
+    line-height: 3em;
+    color: #fff;
+    /*width: 3em;*/
+  }
+
+  .demo::after{
+    content: "1";
+    display: block;
+  }
+  [class*="m--"]{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  [class*="m--"].m--1{
+    width: 80px;
+  }
+  [class*="m--"].m--4{
+    width: 280px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+      <div class="m--1">
+        <div class="demo"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="m--4">
+        <div class="demo"></div>
+      </div>
+      <div class="m--4">
+        <div class="demo"></div>
+      </div>
+      <div class="m--4">
+        <div class="demo"></div>
+      </div>
+      <div class="m--4">
+        <div class="demo"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>幸运大转盘</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+  }
+  html *{
+    outline: 0;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+  }
+  .wrap{
+    position: relative;
+    background-position: top center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100% auto;
+    background-color: #211418;
+    background-image: url(https://img.kuaidadi.com/cms/img/upload_1a0f09f909548e3ebded0c3388a720ea.jpg);
+  }
+  .first-page{
+    position: relative;
+    height: 11.4rem;
+  }
+  ,first-page .carousel-area{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    top: .2rem;
+  }
+  .carousel-area>div{
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 6.2rem auto;
+    background-size: 6.2rem auto;
+  }
+  .carousel-area .carousel-title{
+    height: 1.92rem;
+    -webkit-background-size: auto 1.9rem;
+    background-size: auto 1.9rem;
+    background-image: url(http://img.kuaidadi.com/cms/img/upload_6d0ae784467c1b8fcf203f0726a89eb8.png);
+    background-position: top center;
+  }
+  .carousel-area .carousel-content{
+    position: relative;
+    padding: .4rem .5rem;
+    top: -.3rem;
+    background-image: url(http://img.kuaidadi.com/cms/img/upload_c25a9ee1d618f9268f8951b5fc970367.png);
+    background-position: top center;
+  }
+  .carousel-panel{
+    position: relative;
+    margin: 0 auto;
+    width: 5.36rem;
+    height: 5.36rem;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    background-image: url(http://img.kuaidadi.com/cms/img/upload_61880a8cbd1cb3ee47af10824d7ac596.png);
+  }
+  .carousel-panel .carousel-prize{
+    position: absolute;
+    width: 3rem;
+    font-size: .24rem;
+    text-align: center;
+  }
+  .carousel-panel .carousel-prize{
+    color: #311e22;
+  }
+  .carousel-six .carousel-prize[data-position="1"]{
+    top: .14rem;
+    left: 1.18rem;
+  }
+  .carousel-panel .carousel-prize .prize-img{
+    position: absolute;
+    left: .85rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    background-color: transparent;
+    margin-top: .1rem;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: center;
+  }
+  .carousel-six .carousel-prize[data-position="2"]{
+    top: 1.36rem;
+    left: 3.28rem;
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+  .carousel-six .carousel-prize[data-position="3"]{
+    top: 3.8rem;
+    left: 3.24rem;
+    -webkit-transform: rotate(120deg);
+    transform: rotate(120deg);
+  }
+  .carousel-six .carousel-prize[data-position="4"]{
+    top: 4.92rem;
+    left: 1.16rem;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .carousel-six .carousel-prize[data-position="5"]{
+    top: 3.75rem;
+    left: -.86rem;
+    -webkit-transform: rotate(240deg);
+    transform: rotate(240deg);
+  }
+  .carousel-six .carousel-prize[data-position="6"]{
+    top: 1.35rem;
+    left: -.86rem;
+    -webkit-transform: rotate(300deg);
+    transform: rotate(300deg);
+  }
+  .first-page .carousel-area .didi-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.18rem;
+    height: 1.18rem;
+    z-index: 5;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+  .first-page .pointer{
+    position: absolute;
+    width: .62rem;
+    height: .85rem;
+    top: 2.2rem;
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%,0);
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+  }
+  .carousel-area .didi-center {
+    background-image: url(http://img.kuaidadi.com/cms/img/upload_343b663f8796492e21016ad3c17f9f22.png);
+  }
+
+  .first-page .pointer {
+    background-image: url(http://img.kuaidadi.com/cms/img/upload_8bfe6804fa6c55dd2d3e9961e6a99531.png);
+  }
+
+  @keyframes rotate1 {
+    from{
+      transform: rotate(1deg);
+    }
+    to{
+      transform: rotate(1500deg);
+    }
+  }
+  @keyframes rotate2 {
+    from{
+      transform: rotate(1deg);
+    }
+    to{
+      transform: rotate(1560deg);
+    }
+  }
+  @keyframes rotate3 {
+    from{
+      transform: rotate(1deg);
+    }
+    to{
+      transform: rotate(1620deg);
+    }
+  }
+  @keyframes rotate4 {
+    from{
+      transform: rotate(1deg);
+    }
+    to{
+      transform: rotate(1680deg);
+    }
+  }
+  @keyframes rotate5 {
+    from{
+      transform: rotate(1deg);
+    }
+    to{
+      transform: rotate(1740deg);
+    }
+  }
+  /*.didi-center,.pointer{
+    animation: rotate .5s linear forwards infinite;
+  }
+  @keyframes rotate {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+  }*/
+  .btn{
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    border-radius: 1rem;
+    height: 1rem;
+    background-color: #ccc;
+    font-weight: bold;
+    font-size: .4rem;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="wrap outside">
+      <div class="first-page">
+        <div class="carousel-area">
+          <div class="carousel-title"></div>
+          <div class="carousel-content" id="carouselContent">
+            <div class="carousel-panel carousel-six">
+              <div class="carousel-prize" data-position="1">
+                <span>智能净饮机</span>
+                <div class="prize-img" style="background-image:url(http://img.kuaidadi.com/cms/img/upload_f919fd4d16775a776c1e8e272ae8b045.png);"></div>
+              </div>
+              <div data-position="2" class="carousel-prize" data-id="2">
+                <span>液晶电视机</span>
+                <div class="prize-img" style="background-image:url(http://img.kuaidadi.com/cms/img/upload_a878cba9f65f7795e4d864dd86f639b0.png);"></div>
+              </div>
+              <div data-position="3" class="carousel-prize" data-id="3">
+                <span>智能运动手表</span>
+                <div class="prize-img" style="background-image:url(http://img.kuaidadi.com/cms/img/upload_ac2f116ab69896fa6ae82cf15f157afc.png);"></div>
+              </div>
+              <div data-position="4" class="carousel-prize" data-id="4">
+                <span>代驾券</span>
+                <div class="prize-img" style="background-image:url(http://img.kuaidadi.com/cms/img/upload_a84b4c093d5938af5f4ab8caa54463e9.png);"></div>
+              </div>
+              <div data-position="5" class="carousel-prize" data-id="5">
+                <span>谢谢您的参与</span>
+                <div class="prize-img" style="background-image:url(http://img.kuaidadi.com/cms/img/upload_937292f9578f697ed3890a82a8df1aa1.png);"></div>
+              </div>
+              <div data-position="6" class="carousel-prize" data-id="6">
+                <span>剃须刀</span>
+                <div class="prize-img" style="background-image:url(http://img.kuaidadi.com/cms/img/upload_794ec27817a51e1a33fdfd544a2ac9ca.png);"></div>
+              </div>
+
+            </div>
+            <div class="didi-center"></div>
+            <div class="pointer"></div>
+            <div class="other-mask"></div>
+          </div>
+        </div>
+        <button type="button" name="button" class="btn">按钮</button>
+      </div>
+    </div>
+  </div>
+  <script>
+;(function(win) {   var w = document.body && document.body.clientWidth,f = w*48/360;
+  window.document.getElementsByTagName('html')[0].setAttribute('style', 'font-size:' + f + 'px;');   })(window);
+</script>
+<script type="text/javascript">
+  var isPlaying = false;
+  console.log("开始:"+isPlaying);
+  document.querySelector('.btn').addEventListener('click',function(){
+    if (isPlaying) {
+      return false;
+    }
+
+    var num = Math.floor(Math.random()*6);
+    var ani = "rotate" + (num == 0?"":num) + " 3s ease forwards 1";
+
+    var pannel = document.querySelector('.carousel-panel');
+    pannel.style.animation = ani;
+    console.log(ani);
+    console.log("结束:"+isPlaying);
+    isPlaying = true;
+  },false);
+  document.querySelector('.carousel-panel').addEventListener('webkitAnimationEnd',function(){
+    isPlaying = false;
+  },false);
+</script>
+</body>
+</html>

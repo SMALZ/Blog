@@ -1,0 +1,1212 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DB</title>
+    <link rel="stylesheet" type="text/css" href="/css/douban/douban.css">
+    <link rel="stylesheet" href="/css/douban/works.css">
+    <script>
+        $(function(){
+            $('#pic_01').hover(function(){
+                $('.doubanapp_qrcode').css('display','block')
+            },function(){
+                $('.doubanapp_qrcode').css('display','none')
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div id="logo"></div>
+        <div id="query">
+            <input type="text" class="text_quna" size=12px placeholder="书籍、电影、音乐、小组、小站、成员">
+            <input type="submit" class="text_qu">
+        </div>
+        <div id="dudi">
+            <ul>
+                <li class="ds"><a href="douban/read" target="_blank">读书</a></li>
+                <li class="dy"><a href="#dianying" >电影</a></li>
+                <li class="yy"><a href="#yinyue" >音乐</a></li>
+                <li class="xz"><a href="#xiaozu" >小组</a></li>
+                <li class="tc"><a href="#tongcheng">同城</a></li>
+                <li class="fm"><a href="#FM">FM</a></li>
+                <li class="dx"><a href="#dongxi">东西</a></li>
+                <li class="sj"><a href="#shiji">市集</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="content_1">
+            <div id="content_1_con">
+                <div id="content_1_left">
+                    <div id="app">
+                        <h2>豆瓣 4.0</h2>
+                        <p>
+                            <p class="sp">我们的精神角落 <span class="justify_fix"></span></p>
+                        </p>
+                        <p class="do">下载豆瓣 App</p>
+                        <div id="pic_01">
+                            <a href="" class="icon_qrcode_green"><img src="/img/douban/icon_qrcode_green.png" width="28" height="28"></a>
+                            <div class="doubanapp_qrcode">
+                                <img src="/img/douban/doubanapp_qrcode.png" width="160" height="160">
+                                <p>iOS / Android 扫码直接下载</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content_1_right">
+                        <table>
+                            <tr>
+                                <td colspan="2">
+                                    <div id="yx">
+                                        <input type="text" placeholder="邮箱/手机号" id="youxiang">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="kong_1"></tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div id="mm">
+                                        <input type="password" placeholder="密码" id="mima">
+                                        <span>帮助</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="kong_1"></tr>
+                           <tr>
+                                <td class="douban"><div>登录豆瓣</div></td>
+                                <td class="zhuce" ><div>注册账号</div></td>
+                           </tr>
+                           <tr class="kong_1"></tr>
+                           <tr>
+                                <td class="jzw">
+                                    <input type="checkbox" tabindex="4" id="jizhu">
+                                    <p>记住我</p>
+                                </td>
+                                <td class="cb">
+                                    <div id="pic_02"><img src="/img/douban/wechat.png"></div>
+                                    <div id="pic_03"><img src="/img/douban/weibo.png"></div>
+                                </td>
+                           </tr>
+                        </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="content_2">
+            <div class="content_2_con"></div>
+        </div>
+
+        <div id="content_3">
+            <div id="content_3_con">
+            <h2 class="liebiaobt">热点内容······<span>(<a href="#">更多</a>)</span></h2>
+                <div id="content_3_con_left">
+                    <div id="content_3_con_left_l">
+                        <ul>
+                            <li>
+                                <div>
+                                     <a href="#" class="pic_b">
+                                        <img src="/img/douban/b.jpg">
+                                     </a>
+                                </div>
+                                <div class="explain_picture">
+                                     <a href="#" class="explain">云和山的彼端-瑞士</a>
+                                     <span class="amount">128张照片</span>
+                                </div>
+                            </li>
+                            <li>
+                                 <div>
+                                     <a href="#" class="pic_c"><img src="/img/douban/c.jpg"></a>
+                                </div>
+                                <div class="explain_picture">
+                                     <a href="#" class="explain">仙本那的风景</a>
+                                    <span class="amount">63张照片</span>
+                                </div>
+                            </li>
+                            <li>
+                                 <div>
+                                     <a href="#" class="pic_d"><img src="/img/douban/d.jpg"></a>
+                                </div>
+                                <div class="explain_picture">
+                                    <a href="#" class="explain">斯里兰卡SriLanka</a>
+                                    <span class="amount">40张照片</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                     <a href="#" class="pic_e"><img src="/img/douban/e.jpg"></a>
+                                </div>
+                                <div class="explain_picture">
+                                    <a href="#" class="explain">[索]</a>
+                                    <span class="amount">577张照片</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="content_3_con_left_r">
+                        <ul>
+                            <li>
+                                <div>
+                                     <a href="#" class="explain">分享 | 七月爱的用品</a>
+                                </div>
+                                <div>
+                                     <span class="amount">毒妇脸少年心。日记</span>
+                                </div>
+                                <p>妈的一个月过得真快，又到月底了。 这个月的高温天气 人都变成笼屉的大肉包子 简直...</p>
+                            </li>
+                            <li>
+                                <a href="#" class="explain">熬夜不睡的都是在偷人，以偷自己为主</a>
+                            </li>
+                            <li>
+                                <a href="#" class="explain">"感身空"后首度开腔的金承志，回答了我们这些问题</a>
+                            </li>
+                            <li>
+                                <a href="#" class="explain">当我跑步的时候听什么</a>
+                            </li>
+                            <li>
+                                <a href="#" class="explain">海报漫画 | 焦虑</a>
+                            </li>
+                            <li>
+                                <a href="#" class="explain">《奇怪物语》里，这些对经典电影的致敬你看懂了吗？</a>
+                            </li>
+                            <li>
+                                <a href="#" class="explain">张爱玲才是真·口红达人·彩妆博主·买买买之神！</a>
+                            </li>
+                            <li>
+                                <a href="#" class="explain">我们一生说的最多的谎言，再见和再见（这是一篇旅行小感）</a>
+                            </li>
+                            <li>
+                                <a href="#" class="explain">“怎么会有人爱吃蒜？！”“怎么会有人不爱吃蒜？！”</a>
+                            </li>
+                            <li>
+                                <a href="" class="explain">在自家厨房，DIY一份来自外星球的烈酒</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="content_3_con_right">
+                    <div id="pic_f"><img src="/img/douban/f.jpg"></div>
+                    <div class="con_f">
+                        <h2 class="liebiaobt">线上活动······<span>(<a href="#">更多</a>)</span></h2>
+                        <ul>
+                            <li>
+                                <a class="explain">宅的装甲：晒出你最爱的T恤</a>
+                                <div>
+                                    <span class="amount">时间：6月29日-9月1日</span>
+                                    <p class="amount">219人参加</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="explain">认Bojack Horseman隐藏笑点</a>
+                                <div>
+                                    <span class="amount">时间：7月26日 - 9月24日 </span>
+                                    <p class="amount">83人参加</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="explain">第一届豆瓣晒荷花大晒现在开始啦</a>
+                                <div>
+                                    <span class="amount">时间：6月27日 - 8月26日 </span>
+                                    <p class="amount">485人参加</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="content_4">
+            <div id="content_4_left">
+                <h2>电影</h2>
+                <ul>
+                   <li><a href="#" class="explain">影讯&购票</a></li>
+                   <li><a href="#" class="explain">选电影</a><img src="/img/douban/new_menu.gif" id="new_menu"></li>
+                   <li><a href="#" class="explain">电视剧</a></li>
+                   <li><a href="#" class="explain">排行榜</a></li>
+                   <li><a href="#" class="explain">分类</a></li>
+                   <li><a href="#" class="explain">影评</a></li>
+                   <li><a href="#" class="explain">预告片</a></li>
+                   <li><a href="#" class="explain">问答</a></li>
+                </ul>
+            </div>
+            <div id=content_4_center>
+                <h2  class="liebiaobt">正在热映······<span>(<a href="">更多</a>)</span></h2>
+                <ul>
+                    <li>
+                        <img src="/img/douban/h.jpg">
+                        <div>
+                            <p><a href="#" class="explain_1"> 盗墓笔记</a></p>
+
+                            <div class="pingj"><div class="pic_pingjia pic_h"></div><span>4.9</span></div>
+                            <p class="xuanzgp">选座购票</p>
+                        </div>
+                    </li>
+                    <li>
+                         <img src="/img/douban/g.jpg">
+                        <div>
+                            <p><a href="#" class="explain_1"> 爱宠大机密</a></p>
+                            <div class="pingj"><div class="pic_pingjia pic_g"></div><span>7.7</span></div>
+                            <p class="xuanzgp">选座购票</p>
+                        </div>
+                    </li>
+                    <li>
+                    <img src="/img/douban/i.jpg">
+                        <div>
+                            <p><a href="#" class="explain_1"> 夏有乔木 雅望...</a></p>
+                            <div class="pingj"><div class="pic_pingjia pic_i"></div><span>5.3</span></div>
+                            <p class="xuanzgp">选座购票</p>
+                        </div>
+                    </li>
+                    <li>
+                    <img src="/img/douban/j.jpg">
+                        <div>
+                            <p><a href="#" class="explain_1"> 我最好朋友的婚...</a></p>
+                            <div class="pingj"><div class="pic_pingjia pic_j"></div><span>4.5</span></div>
+                            <p class="xuanzgp">选座购票</p>
+                        </div>
+                    </li>
+                    <li>
+                    <img src="/img/douban/l.jpg">
+                        <div>
+                            <p><a href="#" class="explain_1">绝地逃亡</a></p>
+                            <div class="pingj"><div class="pic_pingjia pic_l"></div><span>5.7</span></div>
+                            <p class="xuanzgp">选座购票</p>
+                        </div>
+                    </li>
+                    <li>
+                    <img src="/img/douban/m.jpg">
+                        <div>
+                            <p><a href="#" class="explain_1"> 封神传奇</a></p>
+                            <div class="pingj"><div class="pic_pingjia pic_m"></div><span>3.2</span></div>
+                            <p class="xuanzgp">选座购票</p>
+                        </div>
+                    </li>
+                    <li>
+                    <img src="/img/douban/m2.jpg">
+                        <div>
+                            <p><a href="#" class="explain_1"> 泰山归来:险战</a></p>
+                            <div class="pingj"><div class="pic_pingjia pic_m2"></div><span>6.2</span></div>
+                            <p class="xuanzgp">选座购票</p>
+                        </div>
+                    </li>
+                    <li>
+                    <img src="/img/douban/n.jpg">
+                        <div>
+                            <p><a href="#" class="explain_1"> 神秘世界历险记...</a></p>
+                            <div class="pingj"><div class="pic_pingjia pic_n"></div><span>6.3</span></div>
+                            <p class="xuanzgp">选座购票</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="content_4_right">
+                <div id="content_4_right_top">
+                    <h2 class="liebiaobt">影片分类······<span>(<a href="#">更多</a>)</span></h2>
+                    <ul>
+                        <li><a class="explain">爱情</a></li>
+                        <li><a class="explain">喜剧</a></li>
+                        <li><a class="explain">动画</a></li>
+                        <li><a class="explain">剧情</a></li>
+                        <li><a class="explain">科幻</a></li>
+                        <li><a class="explain">动作</a></li>
+                        <li><a class="explain">经典</a></li>
+                        <li><a class="explain">悬疑</a></li>
+                        <li><a class="explain">青春</a></li>
+                        <li><a class="explain">犯罪</a></li>
+                        <li><a class="explain">惊悚</a></li>
+                        <li><a class="explain">文艺</a></li>
+                        <li><a class="explain">搞笑</a></li>
+                        <li><a class="explain">纪录片</a></li>
+                        <li><a class="explain">励志</a></li>
+                        <li><a class="explain">恐怖</a></li>
+                        <li><a class="explain">战争</a></li>
+                        <li><a class="explain">短片</a></li>
+                        <li><a class="explain">美国</a></li>
+                        <li><a class="explain">日本</a></li>
+                        <li><a class="explain">香港</a></li>
+                        <li><a class="explain">英国</a></li>
+                        <li><a class="explain">中国</a></li>
+                        <li><a class="explain">法国</a></li>
+                        <li><a class="explain">韩国</a></li>
+                        <li><a class="explain">台湾</a></li>
+                        <li><a class="explain">德国</a></li>
+                        <li><a class="explain">意大利</a></li>
+                    </ul>
+                </div>
+                <div id="content_4_right_bottom">
+                     <h2 class="liebiaobt">近期热门······<span>(<a href="#">更多</a>)</span></h2>
+                    <ol>
+                         <li><a class="explain">小姐</a></li>
+                         <li><a class="explain">完美陌生人</a></li>
+                         <li><a class="explain">一个叫欧维的男人决定去死</a></li>
+                         <li><a class="explain">三人行</a></li>
+                         <li><a class="explain">耐撕侦探</a></li>
+                         <li><a class="explain">寻：电影版</a></li>
+                         <li><a class="explain">初恋这首情歌</a></li>
+                         <li><a class="explain">遇见你之前</a></li>
+                         <li><a class="explain">破碎人生</a></li>
+                         <li><a class="explain">季春奶奶</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div id="content_4_pic"></div>
+        </div>
+
+
+       <div id="content_5">
+            <div id="content_5_left">
+                <h2><a href=""class="explain">小组</a></h2>
+                <ul>
+                    <li><a href=""class="explain">精选</a></li>
+                    <li><a href=""class="explain">文化</a></li>
+                    <li><a href=""class="explain">行摄</a></li>
+                    <li><a href=""class="explain">娱乐</a></li>
+                    <li><a href=""class="explain">时尚</a></li>
+                    <li><a href=""class="explain">生活</a></li>
+                    <li><a href=""class="explain">科技</a></li>
+                </ul>
+            </div>
+            <div id="content_5_center">
+                <h2 class="liebiaobt">
+                    热门小组······<span>(<a>更多</a>)</span>
+                </h2>
+                <ul>
+                    <li>
+                        <div class="c5_center_pic"><img src="/img/douban/5_a.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                <a href="" class="explain">代购之家&海淘</a>
+                                <p>482013个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c5_center_pic"><img src="/img/douban/5_b.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                 <a href="" class="explain">经典短篇2阅读【公众号:keeponreading】</a>
+                                 <p> 706624个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c5_center_pic"><img src="/img/douban/5_c.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                 <a href="" class="explain">美剧fans</a>
+                                 <p>281939个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c5_center_pic"><img src="/img/douban/5_d.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                 <a href="" class="explain">摄影</a>
+                                 <p>213876个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c5_center_pic"><img src="/img/douban/5_e.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                 <a href="" class="explain">佳片推荐 （只迷电影不装逼）</a>
+                                 <p>548799个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c5_center_pic"><img src="/img/douban/5_f.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                 <a href="" class="explain">我要去香港</a>
+                                 <p>274602个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c5_center_pic"><img src="/img/douban/5_g.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                 <a href="" class="explain">狂爱TVB</a>
+                                 <p>115531个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c5_center_pic"><img src="/img/douban/5_h.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                 <a href="" class="explain">不信你没个什么癖！</a>
+                                 <p>149313个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                          <div class="c5_center_pic"><img src="/img/douban/5_i.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                 <a href="" class="explain">♫ ♬和五月天混在一起♫ ♬</a>
+                                 <p>98518个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                          <div class="c5_center_pic"><img src="/img/douban/5_j.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                 <a href="" class="explain">一二手相机市场</a>
+                                 <p>90306个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                          <div class="c5_center_pic"><img src="/img/douban/5_k.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                 <a href="" class="explain">Lonely Planet</a>
+                                 <p>116494个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                          <div class="c5_center_pic"><img src="/img/douban/5_l.jpg"></div>
+                        <div class="c5_center_explain">
+                            <div class="c5_center_title">
+                                 <a href="" class="explain">傻x歌曲批判大会</a>
+                                 <p>82340个成员</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="content_5_right">
+                <h2 class="liebiaobt">小组分类······</h2>
+               <ul>
+                   <li><a href="" class="explain">兴趣» </a></li>
+                   <li><a href="" class="explain">旅行</a></li>
+                   <li><a href="" class="explain">旅行</a></li>
+                   <li><a href="" class="explain">摄影</a></li>
+                   <li><a href="" class="explain">影视</a></li>
+                   <li><a href="" class="explain">音乐</a></li>
+                   <li><a href="" class="explain">文学</a></li>
+                   <li><a href="" class="explain">游戏</a></li>
+                   <li><a href="" class="explain">动漫</a></li>
+                   <li><a href="" class="explain">运动</a></li>
+                   <li><a href="" class="explain">戏曲</a></li>
+                   <li><a href="" class="explain">桌游</a></li>
+                   <li><a href="" class="explain">怪癖</a></li>
+               </ul>
+               <ul>
+                   <li><a href="" class="explain">生活»</a></li>
+                   <li><a href="" class="explain">健康</a></li>
+                   <li><a href="" class="explain">美食</a></li>
+                   <li><a href="" class="explain">宠物</a></li>
+                   <li><a href="" class="explain">美容</a></li>
+                   <li><a href="" class="explain">化妆</a></li>
+                   <li><a href="" class="explain">护肤</a></li>
+                   <li><a href="" class="explain">服饰</a></li>
+                   <li><a href="" class="explain">公益</a></li>
+                   <li><a href="" class="explain">家庭</a></li>
+                   <li><a href="" class="explain">育儿</a></li>
+                   <li><a href="" class="explain">汽车</a></li>
+               </ul>
+               <ul>
+                   <li><a href="" class="explain">购物»</a></li>
+                   <li><a href="" class="explain">淘宝</a></li>
+                   <li><a href="" class="explain">二手</a></li>
+                   <li><a href="" class="explain">团购</a></li>
+                   <li><a href="" class="explain">数码</a></li>
+                   <li><a href="" class="explain">品牌</a></li>
+                   <li><a href="" class="explain">文具</a></li>
+               </ul>
+               <ul>
+                    <li><a href="" class="explain">社会»</a></li>
+                    <li><a href="" class="explain">求职</a></li>
+                    <li><a href="" class="explain">租房</a></li>
+                    <li><a href="" class="explain">励志</a></li>
+                    <li><a href="" class="explain">留学</a></li>
+                    <li><a href="" class="explain">出国</a></li>
+                    <li><a href="" class="explain">理财</a></li>
+                    <li><a href="" class="explain">传媒</a></li>
+                    <li><a href="" class="explain">创业</a></li>
+                    <li><a href="" class="explain">考试</a></li>
+               </ul>
+               <ul>
+                   <li><a href="" class="explain">艺术»</a></li>
+                   <li><a href="" class="explain">设计</a></li>
+                   <li><a href="" class="explain">手工</a></li>
+                   <li><a href="" class="explain">展览</a></li>
+                   <li><a href="" class="explain">曲艺</a></li>
+                   <li><a href="" class="explain">舞蹈</a></li>
+                   <li><a href="" class="explain">雕塑</a></li>
+                   <li><a href="" class="explain">纹身</a></li>
+               </ul>
+               <ul>
+                    <li><a href="" class="explain">学术»</a></li>
+                    <li><a href="" class="explain">人文</a></li>
+                    <li><a href="" class="explain">社科</a></li>
+                    <li><a href="" class="explain">自然</a></li>
+                    <li><a href="" class="explain">建筑</a></li>
+                    <li><a href="" class="explain">国学</a></li>
+                    <li><a href="" class="explain">语言</a></li>
+                    <li><a href="" class="explain">宗教</a></li>
+                    <li><a href="" class="explain">哲学</a></li>
+                    <li><a href="" class="explain">软件</a></li>
+                    <li><a href="" class="explain">硬件</a></li>
+                    <li><a href="" class="explain">互联网</a></li>
+               </ul>
+               <ul>
+                   <li><a href="" class="explain">情感»</a></li>
+                   <li><a href="" class="explain">恋爱</a></li>
+                   <li><a href="" class="explain">心情</a></li>
+                   <li><a href="" class="explain">心理学</a></li>
+                   <li><a href="" class="explain">星座</a></li>
+                   <li><a href="" class="explain">塔罗</a></li>
+                   <li><a href="" class="explain">LES</a></li>
+                   <li><a href="" class="explain">GAY</a></li>
+               </ul>
+               <ul>
+                   <li><a href="" class="explain">闲聊»</a></li>
+                   <li><a href="" class="explain">吐槽</a></li>
+                   <li><a href="" class="explain">笑话</a></li>
+                   <li><a href="" class="explain">直播</a></li>
+                   <li><a href="" class="explain">八卦</a></li>
+                   <li><a href="" class="explain">发泄</a></li>
+               </ul>
+            </div>
+       </div>
+
+       <div id="content_6">
+            <div id="content_6_left">
+                <h2><a href="">读书</a></h2>
+                <ul>
+                    <li><a href="" class="explain_2">分类浏览</a></li>
+                    <li><a href="" class="explain_2">阅读</a><img src="/img/douban/new_menu.gif"></li>
+                    <li><a href="" class="explain_2">作者</a></li>
+                    <li><a href="" class="explain_2">书评</a></li>
+                    <li><a href="" class="explain_2">购书单</a></li>
+                </ul>
+                <div id="c6_pic_dbread" class="explain_2"></div>
+                <p><a href="" class="explain_2">豆瓣阅读</a></p>
+            </div>
+            <div id="content_6_center">
+                <div id="content_6_center_top">
+                    <h2 class="liebiaobt_1">新书速递······<span>(<a href="">更多</a>)</span></h2>
+                    <ul>
+                        <li>
+                            <div><a href=""><img src="/img/douban/6_b.jpg"></a></div>
+                            <div>
+                                <a href="" class="explain_2">Harry P...</a>
+                                <p>J.K. Ro...</p>
+                                <p>免费试读</p>
+                            </div>
+                        </li>
+                        <li>
+                             <div><a href=""><img src="/img/douban/a_c.jpg"></a></div>
+                             <div>
+                                <a href="" class="explain_2">八万四千问</a>
+                                <p>宗萨蒋扬钦哲仁...</p>
+                                <p>免费试读</p>
+                            </div>
+                        </li>
+                        <li>
+                             <div><a href=""><img src="/img/douban/a_d.jpg"></a></div>
+                             <div>
+                                <a href="" class="explain_2">如何应对愤怒的</a>
+                                <p>（美）劳伦斯...</p>
+                                <p>免费试读</p>
+                            </div>
+                        </li>
+                        <li>
+                              <div><a href=""><img src="/img/douban/6_b.jpg"></a></div>
+                              <div>
+                                <a href="" class="explain_2">Harry P...</a>
+                                <p>J.K. Ro...</p>
+                                <p>免费试读</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="content_6_center_bottom">
+                    <h2 class="liebiaobt_1">原创数字作品······<span>(<a href="">更多</a>)</span></h2>
+                    <ul>
+                        <li>
+                            <div><a href=""><img src="/img/douban/a_f.jpg"></a></div>
+                            <div>
+                                <a href="" class="explain_2">追逐太阳的男人...</a>
+                                <p>翼走</p>
+                                <p>1.99元</p>
+                                <p>免费试读</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div><a href=""><img src="/img/douban/a_g.jpg"></a></div>
+                            <div>
+                                <a href="" class="explain_2">有个故事，让我...</a>
+                                <p>陈长生</p>
+                                <p>1.99元</p>
+                                <p>免费试读</p>
+                            </div>
+                        </li>
+                        <li>
+                        <div><a href=""><img src="/img/douban/a_h.jpg"></a></div>
+                            <div>
+                                <a href="" class="explain_2">在远山，有只狐...</a>
+                                <p>寒知了</p>
+                                <p>1.99元</p>
+                                <p>免费试读</p>
+                            </div>
+                        </li>
+                        <li>
+                        <div><a href=""><img src="/img/douban/a_i.jpg"></a></div>
+                            <div>
+                                <a href="" class="explain_2">光的游戏</a>
+                                <p>Jiyue</p>
+                                <p>0.99元</p>
+                                <p>免费试读</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="content_6_right">
+                <h2 class="liebiaobt_1">热门标签······<span>(<a>更多</a>)</span></h2>
+                <ul>
+                    <li><a href="">[文学]</a></li>
+                    <li><a href="" class="explain_2">小说</a></li>
+                    <li><a href="" class="explain_2">随笔</a></li>
+                    <li><a href="" class="explain_2">日本文学</a></li>
+                    <li><a href="" class="explain_2">散文</a></li>
+                    <li><a href="" class="explain_2">童话</a></li>
+                    <li><a href="" class="explain_2">诗歌</a></li>
+                    <li><a href="" class="explain_2">名著</a></li>
+                    <li><a href="" class="explain_2">港台</a></li>
+                    <li><a href="" class="explain_2">更多</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">[流行]</a></li>
+                    <li><a href=""class="explain_2">漫画</a></li>
+                    <li><a href="" class="explain_2">绘本</a></li>
+                    <li><a href="" class="explain_2">推理</a></li>
+                    <li><a href="" class="explain_2">青春</a></li>
+                    <li><a href="" class="explain_2">言情</a></li>
+                    <li><a href="" class="explain_2">科幻</a></li>
+                    <li><a href="" class="explain_2">武侠</a></li>
+                    <li><a href="" class="explain_2">奇幻</a></li>
+                    <li><a href="" class="explain_2">更多</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">[文化]</a></li>
+                    <li><a href="" class="explain_2">历史</a></li>
+                    <li><a href="" class="explain_2">哲学</a></li>
+                    <li><a href="" class="explain_2">传记</a></li>
+                    <li><a href="" class="explain_2">设计</a></li>
+                    <li><a href="" class="explain_2">建筑</a></li>
+                    <li><a href="" class="explain_2">电影</a></li>
+                    <li><a href="" class="explain_2">回忆录</a></li>
+                    <li><a href="" class="explain_2">音乐</a></li>
+                    <li><a href="" class="explain_2">更多</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">[生活]</a></li>
+                    <li><a href="" class="explain_2">旅行</a></li>
+                    <li><a href="" class="explain_2">励志</a></li>
+                    <li><a href="" class="explain_2">职场</a></li>
+                    <li><a href="" class="explain_2">美食</a></li>
+                    <li><a href="" class="explain_2">教育</a></li>
+                    <li><a href="" class="explain_2">灵修</a></li>
+                    <li><a href="" class="explain_2">健康</a></li>
+                    <li><a href="" class="explain_2">家居</a></li>
+                    <li><a href="" class="explain_2">更多</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">[经管]</a></li>
+                    <li><a href="" class="explain_2">经济学</a></li>
+                    <li><a href="" class="explain_2">管理</a></li>
+                    <li><a href="" class="explain_2">金融</a></li>
+                    <li><a href="" class="explain_2">商业</a></li>
+                    <li><a href="" class="explain_2">营销</a></li>
+                    <li><a href="" class="explain_2">理财</a></li>
+                    <li><a href="" class="explain_2">股票</a></li>
+                    <li><a href="" class="explain_2">企业史</a></li>
+                    <li><a href="" class="explain_2">更多</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">[科技]</a></li>
+                    <li><a href="" class="explain_2">科普</a></li>
+                    <li><a href="" class="explain_2">互联网</a></li>
+                    <li><a href="" class="explain_2">编程</a></li>
+                    <li><a href="" class="explain_2">交互设计</a></li>
+                    <li><a href="" class="explain_2">算法</a></li>
+                    <li><a href="" class="explain_2">通信</a></li>
+                    <li><a href="" class="explain_2">神经网络</a></li>
+                    <li><a href="" class="explain_2">更多</a></li>
+                </ul>
+            </div>
+       </div>
+
+       <div id="content_7">
+            <div id="content_7_left">
+                <h2><a href="">音乐</a></h2>
+                <ul>
+                    <li><a href="" class="explain_2">音乐人</a></li>
+                    <li><a href="" class="explain_2">金羊毛计划</a></li>
+                    <li><a href="" class="explain_2">专题</a></li>
+                    <li><a href="" class="explain_2">排行榜</a></li>
+                    <li><a href="" class="explain_2">分类浏览</a></li>
+                    <li><a href="" class="explain_2">乐评</a></li>
+                    <li><a href="" class="explain_2">歌单</a></li>
+                    <li><a href="" class="explain_2">豆瓣FM</a></li>
+                    <li><a href="" class="explain_2">阿比鹿2015</a></li>
+                </ul>
+                <div id="c7_pic_dbFM"></div>
+                <a class="explain_2">豆瓣FM</a>
+                <div id="c7_pic_dbyyr"></div>
+                <a class="explain_2">豆瓣音乐人</a>
+            </div>
+            <div id="content_7_center">
+                <div id="content_7_center_top">
+                    <h2 class="liebiaobt_1">豆瓣新碟榜······<span>(<a>更多</a>)</span></h2>
+                    <ul>
+                        <li>
+                            <div><a href=""><img src="/img/douban/7_a.jpg"></a></div>
+                            <div>
+                                <p>1.<a href="" class="explain_2">小夢大半</a></p>
+                                 <p><a href="" class="explain_2">陳粒</a></p>
+                                 <div src="图片/1.png"></div><span>7.1</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div><a href=""><img src="/img/douban/7_b.jpg"></a></div>
+                            <div>
+                                <p>2.<a href="" class="explain_2">自传</a></p>
+                                <p><a href="" class="explain_2">五月天</a></p>
+                                <div src="图片/1.png"></div><span>8.4</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div><a href=""><img src="/img/douban/7_c.jpg"></a></div>
+                            <div>
+                                <p>3.<a href="" class="explain_2">日常</a></p>
+                                <p><a href="" class="explain_2">田馥甄</a></p>
+                                <div src="图片/1.png"></div><span>7.2</span>
+                            </div>
+                        </li>
+                        <li>
+                             <div><a href=""><img src="/img/douban/7_d.jpg"></a></div>
+                            <div>
+                                <p>4.<a href="" class="explain_2">李志北京不插电现场<br>2016.5.29</a></p>
+                                <p><a href="" class="explain_2">李志</a></p>
+                                <div src="图片/1.png"></div><span>9.1</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div><a href=""><img src="/img/douban/7_e.jpg"></a></div>
+                            <div>
+                                <p>5.<a href="" class="explain_2">Suicide Squad: The Album</a></p>
+                                <p><a href="" class="explain_2"></a></p>
+                                <div src="图片/1.png"></div><span>8.0</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div><a href=""><img src="/img/douban/7_f.jpg"></a></div>
+                            <div>
+                                <p>6.<a href="" class="explain_2">GENERATIONWHY</a></p>
+                                <p><a href="" class="explain_2"></a></p>
+                                <div src="图片/1.png"></div><span>8.0</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div><a href=""><img src="/img/douban/7_g.jpg"></a></div>
+                            <div>
+                                <p>7.<a href="" class="explain_2">A'wesome</a></p>
+                                <p><a href="" class="explain_2">金泫雅 Kim Hyun A</a></p>
+                                <div src="图片/1.png"></div><span>6.3</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div><a href=""><img src="/img/douban/7_h.jpg"></a></div>
+                            <div>
+                                <p>8.<a href="" class="explain_2">醒めない(通常盤)</a></p>
+                                <p><a href="" class="explain_2">スピッツ</a></p>
+                                <div src="图片/1.png"></div><span>8.6</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="content_7_center_bottom">
+                    <h2 class="liebiaobt_1">热门歌单······<span>(<a>更多</a>)</span></h2>
+                    <ul>
+                        <li><a href=""><img src="/img/douban/7_j1.jpg"></a><p>轻音乐</p></li>
+                        <li><a href=""><img src="/img/douban/7_j2.jpg"></a><p>再遇见时，我闭上双眼。</p></li>
+                        <li><a href=""><img src="/img/douban/7_j3.jpg"></a><p>主治论文焦虑拖延01</p></li>
+                        <li><a href=""><img src="/img/douban/7_j2.jpg"></a><p>不听民谣会死</p></li>
+                    </ul>
+                </div>
+            </div>
+           <div id="content_7_right">
+                <h2 class="liebiaobt_1">本周流行音乐人······<span>(<a>更多</a>)</span></h2>
+                <ol>
+                    <li>
+                        <div><span>1.</span><a href=""><img src="/img/douban/7_i1.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain_2">金玟岐_Vanessa</a></p>
+                            <p class="explain_3">流派: 流行 Pop</p>
+                            <p class="explain_3">63748人关注</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div><span>2.</span><a href=""><img src="/img/douban/7_i2.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain_2">邵夷贝</a></p>
+                            <p class="explain_3">流派: 民谣 Folk</p>
+                            <p class="explain_3">202846人关注</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div><span>3.</span><a href=""><img src="/img/douban/7_i3.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain_2">羽毛船</a></p>
+                            <p class="explain_3"> 流派: 轻音乐 Easy Listening</p>
+                            <p class="explain_3">1796人关注</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div><span>4.</span><a href=""><img src="/img/douban/7_i4.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain_2">威士忌的碎冰</a></p>
+                            <p class="explain_3"> 流派: 民谣 Folk</p>
+                            <p class="explain_3">9372人关注</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div><span>5.</span><a href=""><img src="/img/douban/7_i5.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain_2">DOC</a></p>
+                            <p class="explain_3"> 流派: 摇滚 Rock</p>
+                            <p class="explain_3">1292人关注</p>
+                        </div>
+                    </li>
+                </ol>
+           </div>
+        </div>
+        <div id="content_8">
+            <div id="content_8_left">
+                <h2><a href="">市集</a></h2>
+                <ul>
+                    <li><a href="" class="explain_2">美食</a></li>
+                    <li><a href="" class="explain_2">服装</a></li>
+                    <li><a href="" class="explain_2">配饰</a></li>
+                    <li><a href="" class="explain_2">包袋</a></li>
+                    <li><a href="" class="explain_2">鞋靴</a></li>
+                    <li><a href="" class="explain_2">美容护肤</a></li>
+                    <li><a href="" class="explain_2">家居生活</a></li>
+                </ul>
+            </div>
+            <div id="content_8_center">
+                <div id="content_8_center_top">
+                    <h2 class="liebiaobt_1">热门商品······<span>(<a>更多</a>)</span></h2>
+                    <div class="NH_8">
+                        <a href=""><img src="/img/douban/8_a.jpg"></a>
+                        <p>Naturehike-NH(纳海)户外铝杆帐篷 超轻款</p><span>271.00</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href=""><img src="/img/douban/8_a1.jpg"></a>
+                            <p><a href="" class="explain">寻味地图香水 试用装全套8只 2ml试管装</a></p>
+                        </li>
+                        <li>
+                            <a href=""><img src="/img/douban/8_a2.jpg"></a>
+                            <p><a href="" class="explain">先笙新款男士纯棉嬉皮人脸图案T恤</a></p>
+                        </li>
+                        <li>
+                            <a href=""><img src="/img/douban/8_a3.jpg"></a>
+                            <p><a href="" class="explain">PISN2016夏季新品 不规则系带款修身中长裙度假休闲高腰半身裙</a></p>
+                        </li>
+                        <li>
+                            <a href=""><img src="/img/douban/8_a4.jpg"></a>
+                            <p><a href="" class="explain">【预售有礼】木马逐风Mazur“三茶六味”牛轧糖礼盒</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="content_8_center_bottom">
+                    <div class="heidian_8">
+                        <a href=""><img src="/img/douban/8_b.jpg"></a>
+                        <p>黑鹿野餐垫防潮垫沙滩垫</p><span>151.00</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href=""><img src="/img/douban/8_b1.jpg"></a>
+                            <p><a href="" class="explain">日本wpc 心形条纹/桃心晴雨伞</a></p>
+                        </li>
+                        <li>
+                            <a href=""><img src="/img/douban/8_b2.jpg"></a>
+                            <p><a href="" class="explain">黑鹿金字塔帐篷双门4开窗</a></p>
+                        </li>
+                        <li>
+                            <a href=""><img src="/img/douban/8_b3.jpg"></a>
+                            <p><a href="" class="explain">PISN 2016春季新品 独立设计 飘逸垂顺两片式九分中高腰弹力阔腿裤</a></p>
+                        </li>
+                        <li>
+                            <a href=""><img src="/img/douban/8_b4.jpg"></a>
+                            <p><a href="" class="explain">黄小姐 春季 哑光高弹天鹅绒显瘦丝袜80D mh319</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="content_8_right">
+                <h2 class="liebiaobt_1">热门店铺······<span>(<a>更多</a>)</span></h2>
+                <ul>
+                    <li>
+                        <div><a href=""><img src="/img/douban/8_c1.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain">揽胜户外</a></p>
+                            <p class="explain_3">主营高端户外装备用品涉及炊具类气炉 油炉，柴火炉，酒精炉 ，...</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a href=""><img src="/img/douban/8_c2.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain">Apence土耳其毛巾</a></p>
+                            <p class="explain_3">纯正土耳其进口，用100%的努力去赢得95%以上用户的满意！</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a href=""><img src="/img/douban/8_c3.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain">Nanaz 家居百货</a></p>
+                            <p class="explain_3">不用装修，NaNaZ home 也能你家变得更美一些。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a href=""><img src="/img/douban/8_c4.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain">SOME单车</a></p>
+                            <p class="explain_3">在这个汽车占据城市的时代，城市自行车代表了热爱并享受生活那一...</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+       <div id="content_9">
+            <div id="content_9_left">
+                <h2><a href="">一拍一</a></h2>
+                <ul>
+                    <li><a href="" class="explain_2">婚纱</a></li>
+                    <li><a href="" class="explain_2">写真</a></li>
+                    <li><a href="" class="explain_2">私房</a></li>
+                    <li><a href="" class="explain_2">亲子</a></li>
+                    <li><a href="" class="explain_2">旅拍</a></li>
+                </ul>
+            </div>
+            <div id="content_9_center">
+                <div id="content_9_center_top">
+                    <h2 class="liebiaobt_1">写真摄影服务······<span>(<a>更多</a>)</span></h2>
+                    <ul>
+                        <li>
+                            <a href=""><img src="/img/douban/9_a1.jpg"></a>
+                            <p><a href="">十九岁的第几天</a></p>
+                        </li>
+                        <li>
+                            <a href=""><img src="/img/douban/9_a2.jpg"></a>
+                            <p><a href="">夏日少女</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="content_9_center_top">
+                    <h2 class="liebiaobt_1">婚纱摄影服务······<span>(<a>更多</a>)</span></h2>
+                    <ul>
+                        <li>
+                            <a href=""><img src="/img/douban/9_a3.jpg"></a>
+                            <p><a href="">婚纱照的100种拍法3</a></p>
+                        </li>
+                        <li>
+                            <a href=""><img src="/img/douban/9_a2.jpg"></a>
+                            <p><a href="">ROSE DE MAI</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <h2 class="liebiaobt_1">更多······<span>(<a>更多</a>)</span></h2>
+            </div>
+            <div id="content_9_right">
+                <h2 class="liebiaobt_1">标签······</h2>
+                <ul>
+                    <li>风格</li>
+                    <li><a href="" class="explain_2">自然</a></li>
+                    <li><a href="" class="explain_2">复古</a></li>
+                    <li><a href="" class="explain_2">少女</a></li>
+                    <li><a href="" class="explain_2">清新</a></li>
+                    <li><a href="" class="explain_2">日系</a></li>
+                    <li><a href="" class="explain_2">情绪</a></li>
+                    <li><a href="" class="explain_2">女性</a></li>
+                    <li><a href="" class="explain_2">和服</a></li>
+                    <li><a href="" class="explain_2">唯美</a></li>
+                    <li><a href="" class="explain_2">夏天</a></li>
+                </ul>
+                <ul>
+                    <li>城市</li>
+                    <li><a href="" class="explain_2">北京</a></li>
+                    <li><a href="" class="explain_2">上海</a></li>
+                    <li><a href="" class="explain_2">广州</a></li>
+                    <li><a href="" class="explain_2">成都</a></li>
+                    <li><a href="" class="explain_2">深圳</a></li>
+                    <li><a href="" class="explain_2">厦门</a></li>
+                    <li><a href="" class="explain_2">武汉</a></li>
+                    <li><a href="" class="explain_2">南京</a></li>
+                    <li><a href="" class="explain_2">杭州</a></li>
+                    <li><a href="" class="explain_2">沈阳</a></li>
+                    <li><a href="" class="explain_2">三亚</a></li>
+                    <li><a href="" class="explain_2">重庆</a></li>
+                    <li><a href="" class="explain_2">青岛</a></li>
+                    <li><a href="" class="explain_2">海口</a></li>
+                </ul>
+                <p>微信扫一扫, 了解最新拍摄服务:</p>
+                <img src="/img/douban/9_erweima.jpg">
+            </div>
+       </div>
+       <div id="content_10">
+            <div id="content_10_left">
+                <h2><a href="">同城</a></h2>
+                <ul>
+                    <li><a href="" class="explain_2">近期活动</a></li>
+                    <li><a href="" class="explain_2">主办方</a></li>
+                    <li><a href="" class="explain_2">舞台剧</a></li>
+                </ul>
+            </div>
+            <div id="content_10_center">
+                 <h2 class="liebiaobt_1">北京 · 本周热门活动······<span>(<a>更多</a>)</span></h2>
+                 <ul>
+                     <li>
+                        <div><a href=""><img src="/img/douban/10_a1.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain_2" title="BIBF文学沙龙]开书店的人生 ——《东京本屋》新书交流"> [BIBF文学沙龙]开书店的人生 ——《东京本屋》新书交流</a></p>
+                            <p class="explain_3">8月23日 周二 19:00 - 21:00</p>
+                            <p class="explain_3">望京中环南路1号 社科院研...</p>
+                            <p class="explain_3">35人关注</p>
+                        </div>
+                     </li>
+                     <li>
+                        <div><a href=""><img src="/img/douban/10_a2.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain_2" title="加拿大流行朋克乐队Simple Plan简单计划2016北京演唱会">加拿大流行朋克乐队Simple Plan简单计划2016北京演唱会</a></p>
+                            <p class="explain_3">8月28日 周日 20:00 - 22:00</p>
+                            <p class="explain_3">汇源空间</p>
+                            <p class="explain_3">21人关注</p>
+                        </div>
+                     </li>
+                     <li>
+                        <div><a href=""><img src="/img/douban/10_a3.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain_2" title="心弦—浪漫吉他名曲音乐会">心弦—浪漫吉他名曲音乐会
+                            <span class="zzsp"><br>正在售票</span></a>
+                            </p>
+                            <p class="explain_3">8月18日 周四 00:00 - 21:30</p>
+                            <p class="explain_3">中山音乐堂</p>
+                            <p class="explain_3">3人关注</p>
+                        </div>
+                     </li>
+                     <li>
+                        <div><a href=""><img src="/img/douban/10_a4.jpg"></a></div>
+                        <div>
+                            <p><a href="" class="explain_2" title="第十九届北京国际音乐节 法国普罗旺斯—埃克斯国际艺术节">第十九届北京国际音乐节 法国普罗旺斯—埃克斯国际艺...<span class="zzsp">正在售票</span></a>
+                            </p>
+                            <p class="explain_3">10月15日 周六 00:00 - 21:30</p>
+                            <p class="explain_3">保利剧院</p>
+                            <p class="explain_3">1人关注</p>
+                        </div>
+                     </li>
+                 </ul>
+            </div>
+            <div id="content_10_right">
+                <h2 class="liebiaobt_1">活动标签······<span>(<a>更多</a>)</span></h2>
+                <ul>
+                    <li><a href="" class="explain_2">音乐»</a></li>
+                    <li><a href="" class="explain_2">小型现场</a></li>
+                    <li><a href="" class="explain_2">音乐会</a></li>
+                    <li><a href="" class="explain_2">演唱会</a></li>
+                    <li><a href="" class="explain_2">音乐节</a></li>
+                </ul>
+                <ul>
+                    <li><a href="" class="explain_2">戏剧»</a></li>
+                    <li><a href="" class="explain_2">话剧</a></li>
+                    <li><a href="" class="explain_2">音乐剧</a></li>
+                    <li><a href="" class="explain_2">舞剧</a></li>
+                    <li><a href="" class="explain_2">歌剧</a></li>
+                    <li><a href="" class="explain_2">戏曲</a></li>
+                </ul>
+                <ul>
+                    <li><a href="" class="explain_2">聚会»</a></li>
+                    <li><a href="" class="explain_2">生活</a></li>
+                    <li><a href="" class="explain_2">摄影</a></li>
+                    <li><a href="" class="explain_2">外语</a></li>
+                    <li><a href="" class="explain_2">桌游</a></li>
+                    <li><a href="" class="explain_2">交友</a></li>
+                    <li><a href="" class="explain_2">夜店</a></li>
+                    <li><a href="" class="explain_2">集市</a></li>
+                </ul>
+                <ul>
+                    <li><a href="" class="explain_2">电影»</a></li>
+                    <li><a href="" class="explain_2">主题放映</a></li>
+                    <li><a href="" class="explain_2">影展</a></li>
+                    <li><a href="" class="explain_2">影院活动</a></li>
+                </ul>
+                <ul>
+                    <li><a href="" class="explain_2">其他»</a></li>
+                    <li><a href="" class="explain_2">讲座</a></li>
+                    <li><a href="" class="explain_2">展览</a></li>
+                    <li><a href="" class="explain_2">运动</a></li>
+                    <li><a href="" class="explain_2">旅行</a></li>
+                    <li><a href="" class="explain_2">公益</a></li>
+                </ul>
+            </div>
+       </div>
+       <div id="content_11">
+            <div id="content_11_left">
+                <ul>
+                    <li><p class="explain_3">© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司</p></li>
+                    <li>
+                        <a href="" class="explain">京ICP证090015号</a>
+                        <span class="explain_3"> 京ICP备11027288号 网络视听许可证</span>
+                        <span class="explain">0110418</span>
+                        <span class="explain_3">号</span>
+                    </li>
+                    <li>
+                        <span class="explain_3">京网文[2015]2026-368号 </span>
+                        <img src="/img/douban/biaoshi.gif" align="top">
+                        <span><a href="" class="explain">京公网安备11010502000728</a></span>
+                        <span class="explain">新出网证(京)字129号</span>
+                    </li>
+                    <li>
+                        <span class="explain_3">违法和不良信息举报电话：4008353331  </span>
+                        <img src="/img/douban/jubao.png" width="117px" height="16px" align="top">
+                    </li>
+                    <li>
+                        <img src="/img/douban/jubao (1).png" width="15px" align="absmiddle">
+                        <span><a href="" class="explain">中国互联网举报中心</a></span>
+                        <span class="explain_3"> 电话：12377</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="content_11_right">
+                <ul>
+                    <li><a href="" class="explain">关于豆瓣</a></li>
+                    <li><a href="" class="explain">在豆瓣工作</a></li>
+                    <li><a href="" class="explain">联系我们</a></li>
+                    <li><a href="" class="explain">免责声明</a></li>
+                    <li><a href="" class="explain">帮助中心</a></li>
+                    <li><a href="" class="explain">移动应用</a></li>
+                    <li><a href="" class="explain">豆瓣广告</a></li>
+                </ul>
+            </div>
+       </div>
+    </div>
+</body>
+</html>

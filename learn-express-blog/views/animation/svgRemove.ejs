@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <svg width="800" height="400" xmln="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="0" style="fill:#d8210d" id="first_circle">
+      <animate
+      id="a1"
+      attributeName="r"
+      attributeType="XML"
+      from="0"
+      to="30"
+      begin="0s"
+      dur=".2s"
+      fill="freeze"
+      />
+    </circle>
+    <circle cx="150" cy="100" r="0" style="fill:#e61b64">
+      <animate
+      id="a2"
+      attributeName="r"
+      attributeType="XML"
+      from="0"
+      to="30"
+      begin="a1.end"
+      dur=".2s"
+      fill="freeze"
+      />
+    </circle>
+    <circle cx="200" cy="100" r="0" style="fill:#d7006f">
+      <animate
+      id="a3"
+      attributeName="r"
+      attributeType="XML"
+      from="0"
+      to="30"
+      begin="a2.end"
+      dur=".2s"
+      fill="freeze"
+      />
+    </circle>
+    <circle cx="250" cy="100" r="0" style="fill:#ee869a">
+      <animate
+      id="a4"
+      attributeName="r"
+      attributeType="XML"
+      from="0"
+      to="30"
+      begin="a3.end"
+      dur=".2s"
+      fill="freeze"
+      />
+    </circle>
+    <circle cx="300" cy="100" r="0" style="fill:#e5004f">
+      <animate
+      id="a5"
+      attributeName="r"
+      attributeType="XML"
+      from="0"
+      to="30"
+      begin="a4.end"
+      dur=".2s"
+      fill="freeze"
+      />
+    </circle>
+    <circle cx="350" cy="100" r="0" style="fill:#e5004f">
+      <animate
+      id="a6"
+      attributeName="r"
+      attributeType="XML"
+      from="0"
+      to="30"
+      begin="a5.end+2s"
+      dur=".2s"
+      fill="freeze"
+      />
+    </circle>
+    <circle cx="400" cy="100" r="0" style="fill:#e61b64">
+      <animate
+      id="a7"
+      attributeName="r"
+      attributeType="XML"
+      from="0"
+      to="30"
+      begin="a6.end"
+      dur=".2s"
+      fill="freeze"
+      />
+    </circle>
+  </svg>
+  <!-- <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="200" cy="200" r="50" style="fill:#ff6600">
+    <animate
+      attributeName="r"
+      attributeType="XML"
+      from="50"
+      to="80"
+      begin="0s"
+      dur="2s"
+      fill="freeze"
+      repeatCount="indefinite"
+      values="50;80;50"
+    />
+    <animate
+    attributeName="fill-opacity"
+    attributeType="css"
+    values="1;0.6;1"
+    begin="0s"
+    dur="2s"
+    repeatCount="indefinite"
+    />
+  </circle>
+</svg> -->
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  html,body{
+    width: 100%;
+    height: 50%;
+  }
+  #crumbs{
+    margin:30% auto;
+    width: 50%;
+  }
+  #crumbs ul{
+      list-style: none;
+  }
+  #crumbs ul li{
+    display: inline-block;
+    margin-right: 40px;
+    width: 16%;
+  }
+  #crumbs ul li a{
+       /*float: left;*/
+       /*margin-right: 30px;*/
+       display: block;
+       position: relative;
+       height: 30px;
+       padding: 10px 20px 0 20px;
+       text-align: center;
+       background-color: #3498db;
+       color: #fff;
+       text-decoration: none;
+       font-size: 20px;
+   }
+   #crumbs ul li a:after{
+        content: "";
+        border-left: 20px solid #3498db;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        /*border-right: 20px solid green;*/
+        position: absolute;
+        right: -20px;
+        top: 0;
+    }
+    #crumbs ul li a::before{
+      content: "";
+      border-top: 20px solid #3498db;
+      border-left: 20px solid transparent;
+      border-bottom: 20px solid #3498db;
+      position: absolute;
+      top: 0;
+      left: -20px;
+    }
+    #crumbs ul li:first-child a::before{
+      display: none;
+    }
+    #crumbs ul li:first-child a{
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    #crumbs ul li:last-child a::after{
+      display: none;
+    }
+    #crumbs ul li:last-child a{
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    #crumbs ul li a:hover{
+      background-color:#fa5ba5;
+    }
+    #crumbs ul li a:hover:after{
+      border-left-color: #fa5ba5;
+    }
+    #crumbs ul li a:hover:before{
+      border-top-color: #fa5ba5;
+      border-bottom-color: #fa5ba5;
+    }
+    #test{
+      width: 0px;
+      height: 0px;
+      border-radius: 5px;
+      background: #3498db;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: .2em;
+      border-top: 20px solid green;
+      border-left: 20px solid  red;
+      border-bottom: 20px solid yellow;
+      border-right: 20px solid blue;
+      margin: -20% auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="crumbs">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Info</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+  </div>
+  <div id="test">按钮</div>
+</body>
+</html>

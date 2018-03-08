@@ -1,0 +1,11 @@
+<%- include('header') %>
+<link rel="stylesheet" href="/css/labelCloud.css">
+  <ul id="labelBox">
+    <% for(var i in labelClouds) { %>
+      <li class="hidden"><%= labelClouds[i] %></li>
+      <% } %>
+  </ul>
+<div id="newlabel"></div>
+
+<script src="/js/labelCloud.js"></script>
+<%- include('footer') %>

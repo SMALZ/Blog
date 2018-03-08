@@ -1,0 +1,27 @@
+<div class="widget">
+  <div class="widget-title">
+    <span class="title-i">
+      <span class="title-i-a"></span>
+      <span class="title-i-b"></span>
+      <span class="title-i-c"></span>
+      <span class="title-i-d"></span>
+    </span>
+    <span class="widget-label">最近更新过的文章</span>
+  </div>
+  <ul class="item-label">
+    <% for(var i = 0; i < posts.length; i++) {
+      if(i == 5) {
+        break;
+      } %>
+      <li class="post-cat">
+        <i class="iconfont icon-rightarrow"></i>
+        <a href="/blog/<%= posts[i]._id %>"><%= posts[i].title %></a>
+      </li>
+    <% } %>
+
+    <!-- <li class="post-cat">
+      <i class="iconfont icon-rightarrow"></i>
+      <a href="#">年末特别奉献:一支红杏 网络加速器 [终身7折]活动</a>
+    </li> -->
+  </ul>
+</div>

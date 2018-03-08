@@ -1,0 +1,324 @@
+* { margin: 0px; padding: 0px; }
+body { text-align: center; }
+#header { height: 34px; line-height: 34px; margin-top: 20px; margin-bottom: 25px; }
+#logo { background: url(/img/douban/logo_db.png) no-repeat; height: 34px; width: 160px; margin-right: 16px; }
+.text_quna { border: none; width: 230px; height: 20px; font-size: 13px; padding-left: 5px; }
+.text_qu { background: url(/img/douban/bn_srh_1.png) no-repeat 5px 2px; width: auto; cursor: pointer; color: transparent; border: none; }
+#query { border: 1px solid #c3c3c3; width: 270px; height: 30px; line-height: 30px; overflow: hidden; margin-right: 20px; }
+#dudi ul li { list-style: none;width: 40px; height: 20px;  display: inline-block; text-indent: -10000px; cursor: pointer; padding-right: 10px; }
+#dudi ul li a{width: 40px; height: 20px;display: block;}
+.ds { background: url(/img/douban/anony_nav_logo.png) no-repeat; }
+.dy { background: url(/img/douban/anony_nav_logo.png) no-repeat -60px; }
+.yy { background: url(/img/douban/anony_nav_logo.png) no-repeat -120px }
+.xz { background: url(/img/douban/anony_nav_logo.png) no-repeat -180px }
+.tc { background: url(/img/douban/anony_nav_logo.png) no-repeat -300px }
+.fm { background: url(/img/douban/anony_nav_logo.png) no-repeat -240px }
+.dx { background: url(/img/douban/anony_nav_logo.png) no-repeat -360px }
+.sj { background: url(/img/douban/anony_nav_logo.png) no-repeat -420px }
+a { text-indent: -10000px; text-decoration: none; }
+#dudi { width: 479px; height: 20px; margin-bottom: 7px; overflow: hidden; }
+#logo,
+#query,
+#dudi { display: inline-block; }
+#content_1_left,
+#content_1_right { display: inline-block; vertical-align: middle; }
+#content_1 {	/*height: 178px;*/width: 100%; background-image: url(/img/douban/doubanapp4_bg.png); background-repeat: round; }
+#content_1_con { height: 178px; width: 950px; margin-left: 200px; }
+#content_1_left { background: url(/img/douban/doubanapp4.png) no-repeat; height: 178px; width: 580px; }
+#app { width: auto;/*height: 120px;*/ margin-left: 430px; margin-top: 27px; }
+#app h2 { text-align: left; }
+.justify_fix { display: inline-block; width: 100%; height: 0; }
+#app .sp { font-size: 12px; margin-top: 10px; text-align: justify; width: 150px; overflow: hidden; }
+#app .do { text-align: center; background: #00b51d; font-size: 12px; color: #fff; cursor: pointer; margin-top: 15px; border-radius: 2px; width: 115px; height: 30px; line-height: 30px; }
+#pic_01 { border: 1px solid #00b51d; border-radius: 2px; margin-top: 15px; margin-left: 2px; position: relative; }
+#content_1_left #app .do,
+#content_1_left #app #pic_01 { float: left; }
+#content_1_right { width: 276px; height: 131px; margin-left: 80px; margin-bottom: 20px; }
+.doubanapp_qrcode { position: absolute; top: -1px; left: -1px; border: 1px solid #4a480d; color: #666; padding: 20px 20px 5px; display: none; border-radius: 2px; background: #fff; }
+.doubanapp_qrcode p { font-size: 13px; text-align: justify; white-space: nowrap; margin: 10px 0px 10px 0px; }
+#yx input { border: none; width: 253px; height: 30px; border-radius: 2px; padding: 0px 8px; color: #005 }
+#yx,
+#mm { border: 1px solid #c3c3c3; background: #fff; text-align: left; width: 270px; height: auto; font-size: 12px; }
+#mm input { border: none; width: 220px; height: 30px; border-radius: 2px; padding: 0px 8px; color: #005 }
+#mima+span { font-size: 12px; color: #c3c3c3; width: 24px; height: 12px; cursor: pointer; }
+#content_1_right table tr .douban div { border: 1px solid #2abc70; background: #2abc70; text-align: center; font-size: 12px; color: #fff; border-radius: 2px; width: 133px; height: 30px; cursor: pointer; line-height: 30px; }
+#content_1_right table tr .douban div:hover { background: #2a8c70; }
+#content_1_right table tr .zhuce div { border: 1px solid #2abc70; text-align: center; font-size: 12px; color: #2abc70; border-radius: 2px; width: 133px; height: 30px; cursor: pointer; line-height: 30px; }
+
+/*#content_1_right table tr .douban{text-align:left; }
+#content_1_right table tr .zhuce{text-align: right;}
+#content_1_right table tr{}*/
+.kong_1 { height: 1px; }
+#jizhu { width: 13px; height: 13px; }
+#jizhu+p { font-size: 12px; }
+#jizhu,
+#jizhu+p { display: inline-block; overflow: hidden; }
+#content_1_right table tr .jzw { text-align: left; }
+#pic_02,
+#pic_03 { width: 13px; height: 13px; display: inline-block; cursor: pointer; }
+#content_1_right table tr .cb { text-align: right; }
+#content_2 .content_2_con { width: 950px; height: 90px; background: url(/img/douban/a.jpg); cursor: pointer; }
+#content_2 { width: 100%; height: 90px; margin: 30px 0px 10px 0px; padding-left: 200px; }
+.liebiaobt { font-size: 15px; color: #072; text-align: left; margin: 0px 200px 10px; }
+.liebiaobt>span { font-size: 12px; color: #956691; }
+.liebiaobt>span>a { font-size: 12px; color: #37a; }
+.liebiaobt>span>a:hover { background-color: #37a; color: #fff; }
+.explain { font-size: 12px; color: #37a; }
+.explain:hover { background-color: #37a; color: #fff; }
+.explain_picture { margin-bottom: 10px; }
+.amount { font-size: 12px; color: #999; }
+#content_3_con_left_l { width: 350px; margin-right: 4px; }
+#content_3_con_left_l>ul>li { display: inline-block; text-align: left; }
+#content_3_con_left_r { width: 275px; vertical-align: top; margin: 0px 20px 0px 18px; }
+#content_3_con_left_r li { text-align: left; margin-bottom: 8px; list-style: none; }
+#content_3_con_left_r li:first-child>p { font-size: 12px; color: #666; }
+#content_3_con_left_r,
+#content_3_con_left_l { display: inline-block; }
+#pic_f img { width: 265px; height: 110.23px; }
+#content_3_con_right { vertical-align: top; width: 265px; text-align: right; }
+#content_3_con_right .con_f h2 { margin: 10px 0px; }
+#content_3_con_right .con_f ul li { text-align: left; list-style: none; margin-bottom: 20px; }
+#content_3_con_right .con_f ul li div { margin-bottom: 5px; }
+#content_3_con_left,
+#content_3_con_right { display: inline-block; }
+#content_4_left { width: 100px; margin-right: 15px; }
+#content_4_left>h2 { color: #37a; width: 50px; margin-bottom: 12px; }
+#content_4_left>h2:hover { background-color: #37a; color: #fff; }
+#content_4_left>h2+ul>li { text-align: left; margin-top: 8px; list-style: none; }
+#content_4_left>h2+ul>li>a { font-size: 14px; }
+#new_menu { margin: 0px 0px 4px 5px; }
+#content_4_center { width: 535px; }
+#content_4_center>h2 { margin: 0px; }
+#content_4_center>ul>li { display: inline-block; vertical-align: top; margin-left: 20px; height: 223px; }
+.pic_pingjia { width: 55px; height: 11px; display: inline-block; }
+.pic_pingjia+span { font-size: 11px; color: #e09015; margin-left: 8px; }
+.xuanzgp { font-size: 12px; text-align: center; color: #fff; background: #37f; margin: 0px 8px; padding: 3px; }
+.xuanzgp:hover { background: #37a; }
+.explain_1 { color: #000; font-size: 12px; }
+.explain_1:hover { background: #37a; color: #fff; }
+.pic_h { background: url(/img/douban/1.png) no-repeat 0px -55px; }
+.pic_g { background: url(/img/douban/1.png) no-repeat 0px -22px; }
+.pic_j { background: url(/img/douban/1.png) no-repeat 0px -55px; }
+.pic_i { background: url(/img/douban/1.png) no-repeat 0px -44px; }
+.pic_l { background: url(/img/douban/1.png) no-repeat 0px -44px; }
+.pic_m { background: url(/img/douban/1.png) no-repeat 0px -77px; }
+.pic_m2 { background: url(/img/douban/1.png) no-repeat 0px -44px; }
+.pic_n { background: url(/img/douban/1.png) no-repeat 0px -44px; }
+#content_4_center>ul>li>img { vertical-align: middle; margin-bottom: 8px; }
+#content_4_center>ul>li>div>p { margin-bottom: 4px; text-align: center; }
+#content_4_center>ul>li>div>div,
+#content_4_center>ul>li>div>span { text-align: center; }
+#content_4_center>ul { text-align: left; margin: 15px 0px 0px -10px; }
+#content_4_right_top ul li { list-style: none; display: inline-block; width: 3em; }
+#content_4_right_top ul { text-align: left; }
+#content_4_right_top { width: 280px; margin-bottom: 30px; }
+#content_4_right_top h2 { margin: 0px; padding-bottom: 14px; }
+#content_4_right_bottom { width: 270px; }
+#content_4_right_bottom ol { text-align: left; list-style-position: inside; list-style-type: decimal; }
+#content_4_right_bottom ol li { padding-bottom: 5px; border-bottom: 1px solid #eaeaea; font-size: 12px; margin-bottom: 6px; }
+#content_4_right_bottom h2 { margin: 0px 0px 25px 0px; }
+.pingj { margin-bottom: 4px; }
+#content_4_pic { background: url(/img/douban/o.jpg); width: 950px; height: 90px; margin: 60px 0px 0px 200px; }
+#content_4_left,
+#content_4_center,
+#content_4_right { display: inline-block; vertical-align: top; }
+#content_4 { background: #f7f7f7; padding: 40px 0px; margin: 60px 0px 40px 0px; }
+#content_5_left h2 a { font-size: 24px; }
+#content_5_left h2 { margin-bottom: 12px; }
+#content_5_left ul li a { font-size: 14px; }
+#content_5_left li { margin-bottom: 10px; list-style: none; }
+#content_5_left { text-align: left; width: 100px; }
+#content_5_center h2 { margin: 4px 0px 10px 0px; }
+#content_5_center ul li div>.c5_center_title>p { margin-top: 8px; color: #b29999; }
+.c5_center_pic { float: left; margin-right: 15px; }
+#content_5_center ul li { width: 243px; list-style: none; display: inline-block; margin: 0px 23px 40px 0px; overflow: hidden; }
+#content_5_center ul { text-align: left; margin-top: 12px; }
+.c5_center_title { text-align: left; font-size: 13px; }
+#content_5_center { width: 560px; }
+#content_5_left,
+#content_5_center,
+#content_5_right { display: inline-block; vertical-align: top; }
+#content_5_right { width: 265px; }
+#content_5_right h2 { margin: 4px 0px 0px 0px; }
+#content_5_right ul { margin: 16px 0px 0px 0px; text-align: left; }
+#content_5_right ul li:first-child>a { color: #000; font-size: 14px; }
+#content_5_right ul li:first-child>a:hover { background: #37a; color: #fff; }
+#content_5_right ul li:first-child { display: block; margin-bottom: 4px; }
+#content_5_right ul li { display: inline-block; list-style: none; margin-right: 6px; }
+#content_5 { margin-bottom: 20px; }
+.explain_2 { font-size: 12px; color: #614e3c; }
+.explain_2:hover { background: #37a; color: #fff; }
+.liebiaobt_1 { font-size: 15px; color: #072; text-align: left; }
+.liebiaobt_1>span { font-size: 12px; color: #956691; }
+.liebiaobt_1>span>a { font-size: 12px; color: #614e3c; }
+.liebiaobt_1>span>a:hover { background-color: #37a; color: #fff; }
+#content_6_left h2 a { color: #614e3c; }
+#content_6_left h2 a:hover { background: #37a; color: #fff; margin: 0px 0px 14px 0px; }
+#content_6_left ul { text-align: left; }
+#content_6_left ul li a { text-indent: 0px; }
+#content_6_left ul li { margin: 10px 0px 10px 0px; list-style: none; t }
+#content_6_left ul li>img { margin: 0px 0px 4px 2px; }
+#content_6_left { width: 100px; text-align: left; }
+#c6_pic_dbread { background: url(/img/douban/6_a.jpg) no-repeat; width: 50px; height: 50px; border-radius: 10px; box-shadow: 1px 1px 2px #999; margin-top: 30px; }
+#c6_pic_dbread:hover { cursor: pointer; }
+#content_6_center_top ul li,
+#content_6_center_bottom ul li { list-style: none; display: inline-block; margin: 0px 22px 0px 0px; }
+#content_6_center_top ul li div,
+#content_6_center_bottom ul li div { text-align: center; font-size: 13px; }
+#content_6_center_top ul li div:last-child,
+#content_6_center_bottom ul li div:last-child { margin: 10px 0px 0px 0px; }
+#content_6_center_top ul li div>a+p,
+#content_6_center_bottom ul li div>a+p { margin: 12px 0px 3px 0px; }
+#content_6_center_top ul li div p:last-child,
+#content_6_center_bottom ul li div p:last-child { color: #fff; background: #999a95; margin: 0px 12px 0px 12px; padding: 4px 0px 4px 0px; border-radius: 2px; }
+#content_6_center_top ul li div p:last-child:hover,
+#content_6_center_bottom ul li div p:last-child:hover { background: #614c3c; cursor: pointer; }
+#content_6_center_top ul { text-align: left; margin: 14px 0px 30px 0px; padding-left: 10px; }
+#content_6_center_bottom ul { text-align: left; margin: 14px 0px 0px 0px; padding-left: 10px; }
+#content_6_center_bottom ul li div img { width: 100px; }
+#content_6_center_bottom ul li div>a+p+p { color: #999a95; margin: 4px 0px 6px 0px; }
+#content_6_center { width: 535px; margin: 0px 40px 0px 10px; }
+#content_6_right { width: 265px; text-align: left; }
+#content_6_right ul li { display: inline-block; list-style: none; margin: 0px 4px 4px 0px; }
+#content_6_right ul li a { }
+#content_6_right ul { border-bottom: 1px solid #eaeaea; margin: 16px 0px 10px 0px; padding: 0px 0px 10px 0px; }
+#content_6_right ul li:first-child>a { color: #999a95; font-size: 12px; }
+#content_6_left,
+#content_6_center,
+#content_6_right { display: inline-block; vertical-align: top; }
+#content_6 { background: #f7f7f7; padding: 40px 0px 40px 0px; }
+#content_7_left h2 a { color: #bf9f6c; }
+#content_7_left h2 a:hover { background: #37a; color: #fff; }
+#content_7_left h2 { margin: 0px 0px 20px 0px; }
+#content_7_left ul li { list-style: none; margin: 0px 0px 8px 0px; }
+#c7_pic_dbFM { background: url(/img/douban/6_a.jpg) no-repeat -250px 0px; width: 50px; height: 50px; border-radius: 10px; box-shadow: 1px 1px 2px #999; margin: 30px 0px 0px 0px; }
+#c7_pic_dbyyr { background: url(/img/douban/6_a.jpg) no-repeat -50px 0px; width: 50px; height: 50px; border-radius: 10px; box-shadow: 1px 1px 2px #999; margin: 20px 0px 0px 0px; }
+#content_7_left { text-align: left; }
+#content_7_center_top h2 { margin: 0px 0px 12px 0px; }
+#content_7_center_top ul li { list-style: none; display: inline-block; margin: 0px 0px 40px 0px; height: 170px; width: 120px; overflow: hidden; }
+#content_7_center_top ul li>div,
+#content_7_center_top ul li div:last-child { text-align: center; }
+#content_7_center_top ul li div:last-child>p { font-size: 12px; margin: 8px 0px 10px 0px; color: #614e3c; }
+#content_7_center_top ul li div:last-child>div { width: 55px; height: 11px; background: url(/img/douban/1.png) no-repeat 0px -33px; margin: 4px 0px 0px 0px; display: inline-block; }
+#content_7_center_top ul li div:last-child>span { font-size: 12px; margin: 4px 0px 0px 6px; color: #ffac2d; display: inline-block; }
+#content_7_center_top { text-align: left; }
+#content_7_center_bottom ul li { list-style: none; display: inline-block; width: 120px; text-align: center; overflow: hidden; height: 140px; font-size: 14px; }
+#content_7_center_bottom ul li p { margin: 16px 0px 0px 0px; }
+#content_7_center_bottom ul li a img { width: 80px; height: 80px; }
+#content_7_center_bottom h2 { margin: 0px 0px 12px 0px; }
+#content_7_center_bottom { text-align: left; }
+#content_7_center { width: 535px; margin: 0px 36px 0px 40px; }
+#content_7_right  h2 { margin: 0px 0px 12px 0px; }
+.explain_3 { margin: 4px 0px 4px 0px; font-size: 12px; color: #a299ab; }
+#content_7_right ol li div,
+#content_7_right ol li div:last-child { float: left; }
+#content_7_right ol li div { margin: 0px 10px 16px 0px; }
+#content_7_right ol li div span { vertical-align: top; margin: 0px 8px 0px 0px; }
+#content_7_right ol li { overflow: hidden; list-style: none; }
+#content_7_right { width: 265px; overflow: hidden; text-align: left; }
+#content_7_left,
+#content_7_center,
+#content_7_right { display: inline-block; vertical-align: top; }
+#content_7 { margin: 40px 0px 40px 0px; }
+#content_8_left h2 { color: #1f9432; margin: 0px 0px 20px 0px; }
+#content_8_left h2 a:hover { color: #fff; background: #37a; }
+#content_8_left ul li { list-style: none; margin: 0px 0px 12px 0px; }
+#content_8_left ul li a { font-size: 14px; }
+#content_8_left { text-align: left; }
+#content_8_center_top h2 { margin: 6px 0px 20px 0px; }
+.NH_8 a img { width: 250px; height: 250px; }
+.NH_8 p { max-width: 78%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; float: left; color: #37a; font-size: 14px; }
+.NH_8 span { float: right; font-size: 14px; color: #717171; }
+.NH_8 { width: 250px; }
+#content_8_center_top ul li  a img { width: 110px; height: 110px; }
+#content_8_center_top ul li { list-style: none; width: 110px; margin: 10px 10px 0px 0px; }
+#content_8_center_top ul li  a+p { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; max-width: 100%; }
+.NH_8,
+#content_8_center_top ul { display: inline-block; vertical-align: bottom; }
+#content_8_center_top ul li { display: inline-block; }
+#content_8_center_top ul { width: 260px; }
+#content_8_center_top { margin: 0px 0px 20px 0px; }
+.heidian_8 a img { width: 250px; height: 250px; }
+.heidian_8 p { float: left; color: #37a; font-size: 14px; }
+.heidian_8 span { float: right; font-size: 14px; color: #717171; }
+.heidian_8 { width: 250px; }
+#content_8_center_bottom ul li  a img { width: 110px; height: 110px; }
+#content_8_center_bottom ul li { list-style: none; width: 110px; margin: 10px 10px 0px 0px; }
+#content_8_center_bottom ul li  a+p { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; max-width: 100%; }
+.heidian_8,
+#content_8_center_bottom ul { display: inline-block; vertical-align: bottom; overflow: hidden; }
+#content_8_center_bottom ul li { display: inline-block; }
+#content_8_center_bottom ul { width: 260px; }
+#content_8_center_bottom { margin: 0px 0px 20px 0px; }
+#content_8_center { width: 535px; margin: 0px 36px 0px 40px; }
+#content_8_right h2 { margin: 6px 0px 20px 0px; }
+#content_8_right ul li div a img { width: 60px; height: 60px; }
+#content_8_right ul li { list-style: none; margin: 0px 0px 20px 0px; }
+#content_8_right ul li div+div>p { font-size: 14px; }
+#content_8_right ul li div+div>p+p { font-size: 12px; }
+#content_8_right ul li div:last-child { width: 210px; margin: 0px 0px 0px 0px; }
+#content_8_right ul li div,
+#content_8_right ul li div+div { display: inline-block; vertical-align: top; }
+#content_8_right { width: 295px; text-align: left; }
+#content_8_left,
+#content_8_center,
+#content_8_right { display: inline-block; vertical-align: top; }
+#content_8 { background: #f7f7f7; padding: 40px 0px 40px 0px; margin: 0px 0px 40px 0px; }
+#content_9_left h2 { margin: 0px 0px 20px 0px; }
+#content_9_left h2 a { color: #f66; }
+#content_9_left h2 a:hover { color: #fff; background: #37a; }
+#content_9_left { text-align: left; }
+#content_9_left ul li a { font-size: 14px; }
+#content_9_left ul li { list-style: none; margin: 0px 0px 10px 0px; }
+#content_9_center_top h2 { margin: 0px 0px 20px 0px; }
+#content_9_center_top ul li a img { width: 260px; height: 175px; }
+#content_9_center_top ul li { list-style: none; display: inline-block; height: 230px; margin: 0px 6px 0px 0px; }
+#content_9_center_top ul li p { padding: 30px 0px 0px 0px; }
+#content_9_center_top ul li p a { color: #9d9379; font-size: 14px; }
+#content_9_center_top ul li p a:hover { color: #cec7bc; }
+#content_9_center_top { text-align: left; margin: 0px 0px 40px 0px; }
+#content_9_center { margin: 0px 36px 0px 40px; width: 560px; }
+#content_9_right h2 { margin: 0px 0px 20px 0px; }
+#content_9_right ul li { list-style: none; display: inline-block; width: 2em; line-height: 1.2em; padding: 0px 0px 8px 0px; margin: 0px 10px 0px 0px; }
+#content_9_right ul li:first-child { display: block; color: #c3c3c3; }
+#content_9_right ul li:first-child>a { font-size: 13px; }
+#content_9_right ul { border-bottom: 1px solid #c3c3c3; margin: 0px 0px 12px 0px; }
+#content_9_right p { margin: 20px 0px 6px 0px; }
+#content_9_right img { width: 100px; height: 100px; }
+#content_9_right { width: 265px; text-align: left; }
+#content_9_left,
+#content_9_center,
+#content_9_right { display: inline-block; vertical-align: top; }
+#content_9 { padding: 40px 0px 40px 0px; }
+.zzsp { background: #ff8263; color: #fff; border-radius: 3px; padding: 3px; }
+#content_10_left h2 { margin: 0px 0px 20px 0px; }
+#content_10_left h2 a { color: #f66; }
+#content_10_left h2 a:hover { color: #fff; background: #37a; }
+#content_10_left ul li { list-style: none; margin: 0px 0px 10px 0px; }
+#content_10_left ul li a { font-size: 14px; }
+#content_10_left { text-align: left; }
+#content_10_center h2 { margin: 0px 0px 20px 0px; }
+#content_10_center ul li { list-style: none; display: inline-block; height: 120px; }
+#content_10_center ul li div+div { width: 180px; }
+#content_10_center ul li div+div p { margin: 0px 0px 6px 0px; }
+#content_10_center ul li div,
+#content_10_center ul li div+div { display: inline-block; vertical-align: top; }
+#content_10_center ul { margin: 0px 10px 30px 0px; }
+#content_10_center { width: 535px; text-align: left; margin: 0px 36px 0px 60px; }
+#content_10_right h2 { margin: 0px 0px 20px 0px; }
+#content_10_right ul li { display: inline-block; list-style: none; }
+#content_10_right ul li:first-child { display: block; margin: 0px 0px 8px 0px; }
+#content_10_right ul li:first-child>a { font-size: 14px; }
+#content_10_right ul { margin: 0px 0px 20px 0px; }
+#content_10_right { text-align: left; }
+#content_10_left,
+#content_10_center,
+#content_10_right { display: inline-block; vertical-align: top; }
+#content_10 { background: #f7f7f7; padding: 40px 0px 50px 0px; margin: 0px 0px 20px 0px; }
+#content_11_left ul li { list-style: none; line-height: 1.2em; }
+#content_11_left ul { text-align: left; font-size: 12px; }
+#content_11_right ul li { list-style: none; display: inline-block; line-height: 1.2em; }
+#content_11_right { width: 500px; }
+#content_11_left,
+#content_11_right { display: inline-block; vertical-align: top; }
+#content_11 { border-top: 1px dashed #dcdcdc; padding: 20px 0px 50px 0px; }

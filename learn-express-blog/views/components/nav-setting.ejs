@@ -1,0 +1,48 @@
+<nav class="c-divider">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <% if(permiSign == 2) { %>
+        <a class="navbar-brand" href="/blog?author=<%= user._id %>">个人主页</a>
+      <% } else if(permiSign == 1) { %>
+        <a class="navbar-brand" href="/blog">个人主页</a>
+      <% } else {} %>
+    </div>
+    <div>
+        <ul class="nav navbar-nav" style="width:90%">
+            <li><a href="/text">随笔</a></li>
+            <% if(permiSign == 2){ %>
+              <li><a href="/blog?author=<%= user._id %>">博客</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     编辑<b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/blog/create">发表文章</a></li>
+                    <li><a href="/text/textEdit" target="_blank">记录点滴</a></li>
+                    <li><a href="/archive">标签管理</a></li>
+                    <li class="divider"></li>
+                    <li><a href="signout">注销</a></li>
+                </ul>
+            </li>
+            <% } else if( permiSign == 1 ) { %>
+              <li><a href="/blog">博客</a></li>
+            <% } else {} %>
+            <li><a href="/archive/labelCloud">标签</a></li>
+            <% if(wo._id == user._id) { %>
+              <li><a href="/works">作品整理</a></li>
+            <% } %>
+            <li><a href="#">个人简介</a></li>
+            <% if(permiSign == 1 && user == '') { %>
+              <li style="float: right"><a href="/signup">注册</a></li>
+              <li style="float: right"><a href="/">登录</a></li>
+            <% } %>
+            <% if(permiSign == 2 && wo._id != user._id) { %>
+              <li style="float: right"><a href="/signin/host">站主</a></li>
+            <% } %>
+            <% if(permiSign == 1 && user != '') { %>
+              <li style="float: right"><a href="/signin/myself"><%= user.name %></a></li>
+            <% } %>
+        </ul>
+    </div>
+    </div>
+</nav>

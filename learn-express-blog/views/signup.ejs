@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>博客园首页</title>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/icon.css">
+  <link rel="stylesheet" href="/css/sign.css">
+<body>
+  <div class="signFix">
+    <div class="signContainer">
+      <div class="icons-logo">
+        <i class="iconfont icon-c logo-sign"></i>
+        <i class="iconfont icon-T logo-sign"></i>
+      </div>
+      <form action="" method="" class="" enctype="multipart/form-data" id="userInfo">
+        <div class="form-group">
+          <i class="iconfont icon-weibiaoti1 icon-item"></i>
+          <div class="inputBorder">
+            <input type="text" id="userName" placeholder="用户名" name="name" autocomplete="off" onfocus="showIcon(this)" onblur="hiddenIcon(this)">
+          </div>
+        </div>
+        <div class="form-group">
+          <i class="iconfont icon-password icon-item"></i>
+          <div class="inputBorder">
+            <input type="text" id="password" placeholder="密码" text="password" name="password" autocomplete="off" onfocus="showIcon(this)" onblur="hiddenIcon(this)">
+          </div>
+        </div>
+        <div class="form-group">
+          <i class="iconfont icon-zhongfumima icon-item"></i>
+          <div class="inputBorder">
+            <input type="text" id="repeatPassword" placeholder="重复密码" text="password" name="repassword" autocomplete="off" onfocus="showIcon(this)" onblur="hiddenIcon(this)">
+          </div>
+        </div>
+        <div class="form-group">
+          <i class="iconfont icon-dianhuahaoma2 icon-item"></i>
+          <div class="inputBorder">
+            <input type="text" id="tel" name="tel" placeholder="电话号码" autocomplete="off" onfocus="showIcon(this)" onblur="hiddenIcon(this)">
+          </div>
+        </div>
+        <div class="form-group">
+          <i class="iconfont icon-gerenxinxi icon-item"></i>
+          <div class="inputBorder">
+            <input type="text" id="info" placeholder="个人代言" text="password" name="repassword" autocomplete="off" onfocus="showIcon(this)" onblur="hiddenIcon(this)">
+          </div>
+        </div>
+        <div class="form-group">
+          <i class="iconfont icon-touxiang1 icon-item"></i>
+          <div class="inputBorder fileBorder">
+            <span class="modalFile">选择文件</span>
+            <input type="file" name="avatar" id="avatar" placeholder="上传头像" class="avatar" onchange="fileInput(this)" onmousedown="selectFile(this.previousElementSibling)" onmouseup="defalueFile(this.previousElementSibling)">
+            <input type="text" id="file" value="未选择任何文件">
+          </div>
+        </div>
+        <input type="" class="btn-login" value="注  册" onclick="subSign()" readonly>
+      </form>
+    </div>
+  </div>
+<script src="/js/sign.js"></script>
+</body>
+</html>

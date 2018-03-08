@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .box{
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+    .checkbox:not(:checked) ~ div{
+      display: none;
+    }
+    .weui-switch{
+      width: 52px;
+      height: 32px;
+      position: relative;
+      /*box-shadow: inset 2px 2px 2px 2px #ccc;*/
+      border: 1px solid #dfdfdf;
+      /*display:inline-block;*/
+      border-radius: 16px;
+      box-sizing: border-box;
+      outline: 0;
+      /*outline （轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+注释：轮廓线不会占据空间，也不一定是矩形。*/
+      -webkit-appearance: none;
+      /*使用“appearance”属性，来改变任何元素的浏览器默认风格，
+      简单的说，你可以使用“appearance”属性将“段落p”渲染成button的风格，也可以渲染成“输入框”、“选择框”等效果。*/
+      background-color: #dfdfdf;
+      /*transition: background-color 0.1s, border 0.1s;*/
+    }
+    .weui-switch::before{
+      height: 32px;
+      width: 50px;
+      border-radius: 15px;
+      content: " ";
+      position: absolute;
+      background-color: #fdfdfd;
+      top: -1px;
+      left: 0;
+      /*transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+      -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);*/
+    }
+    .weui-switch::after{
+      height: 30px;
+      width: 30px;
+      border-radius: 15px;
+      content: " ";
+      position: absolute;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      top: 0;
+      left: 0;
+      transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+      /*cubic-bezier:transition-timing-function 属性规定过渡效果的速度曲线。
+该属性允许过渡效果随着时间来改变其速度。*/
+      -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+    }
+    .weui-switch:checked:after{
+      transform: translateX(20px);
+    }
+    .weui-switch:checked:before{
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <input type="checkbox" class="checkbox">
+    <div class="box"></div>
+  </div>
+  <div class="switch">
+    <input type="checkbox" class="weui-switch">
+  </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>芝麻信用-canvas demo</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html,body{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+    canvas{
+      margin-top: 400px;
+      border: 1px solid #eee;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      background: -webkit-linear-gradient(top,#0e83f5 0%,#21bdf6 100%);
+      background: linear-gradient(top,#0e83f5 0%,#21bdf6 100%);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="600" data-score="724"></canvas>
+  <script type="text/javascript">
+    window.onload = function(){
+      var canvas = document.getElementById('canvas'),
+        ctx = canvas.getContext('2d');
+        cWidth = canvas.width,
+        cHeight = canvas.height,
+        score = canvas.attributes['data-score'].value,
+        // score = canvas.attribute('data-score');
+        stage = ['较差','中等','良好','优秀','极好'],
+        radius = 150,
+        deg0 = Math.PI/9;
+        deg1 = Math.PI*11/45;
+        if (score < 400 || score > 900) {
+          alert('信用分数区期:400-900');
+        }else {
+          var credit = 400,
+            dot = new Dot(),
+            dotSpeed = 0.03,
+            textSpeed = Math.round(dotSpeed*100/deg1),
+            angle = 0;
+          (function drawFrame(){
+            ctx.save();
+            ctx.clearRect(0,0,cWidth,cHeight);
+            ctx.translate(cWidth/2,cHeight/2);
+            ctx.rotate(8*deg0);
+            dot.x = radius * Math.cos(angle);
+            dot.y = radius * Math.sin(angle);
+            var aim = (score - 400) * deg1 /100;
+            if (angle < aim) {
+              angle += dotSpeed;
+            }
+            dot.draw(ctx);
+
+            if (credit < score - textSpeed) {
+              credit += textSpeed;
+            }else if (credit >=score -textSpeed && credit <score) {
+              credit += 1;
+            }
+
+            // credit +=1;
+            text(credit);
+            ctx.save();
+            ctx.beginPath();
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = 'rgba(255,255,255,.5)';
+            ctx.arc(0,0,radius,0,angle,false);
+            ctx.stroke();
+            ctx.restore();
+            // ctx.restore();
+            window.requestAnimationFrame(drawFrame);
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(255,255,255,.2)';
+            ctx.lineWidth = 10;
+            ctx.arc(0,0,135,0,11*deg0,false);
+            ctx.stroke();
+            ctx.save();
+            for (var i = 0; i < 6; i++) {
+              ctx.beginPath();
+              ctx.lineWidth = 2;
+              ctx.strokeStyle = 'rgba(255,255,255,.3)';
+              ctx.moveTo(140,0);
+              ctx.lineTo(130,0);
+              ctx.stroke();
+              ctx.rotate(deg1);
+            }
+            ctx.restore();
+            ctx.restore();
+            ctx.save();
+          })()
+        }
+
+        function text(process) {
+          ctx.save();
+          ctx.rotate(10*deg0);
+          ctx.fillStyle = '#000';
+          ctx.font = '80px Microsoft yahei';
+          ctx.textAlign = 'center';
+          ctx.textBaseLine = 'top';
+          ctx.fillText(process,0,10);
+          ctx.restore();
+        }
+
+        function Dot() {
+          this.x = 0;
+          this.y = 0;
+          this.draw = function(ctx) {
+            ctx.save();
+            ctx.beginPath();
+            ctx.fillStyle = 'rgba(255,255,255,.7)';
+            ctx.arc(this.x,this.y,3,0,Math.PI*2,false);
+            ctx.fill();
+            ctx.restore();
+          }
+        }
+    }
+  </script>
+</body>
+</html>

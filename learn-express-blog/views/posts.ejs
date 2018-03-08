@@ -1,0 +1,30 @@
+<%- include('header') %>
+  <div class="container-fluid c-posts-container">
+    <div class="row">
+      <div class="c-col-md-1 t"></div>
+      <div class="c-col-md-8 c-list-content" id="pageBox">
+        <% var checkPost = '' %>
+        <% posts.forEach(function(post,value) {
+          checkPost += post._id + '□■' + post.title + '□■' + post.content + '□■'
+                       + post.time + '□■' + post.label + '□■' + post.rank + '□■' + post.pv + '□■' + post.commentCount + '□■' %>
+          <% if( value < 4){ %>
+          <%- include('components/post-content', { post: post}) %>
+          <% } else { %>
+         <% }}) %>
+        <input type="hidden" id="BriefPostsData" value="<%= checkPost %>">
+    </div>
+      <div class="c-col-md-2">
+        <% if(posts!=''){ %>
+          <%- include('components/sidebar-recordnew', { posts: posts}) %>
+        <% } %>
+        <div class="cutBar"></div>
+        <% if(ranks!=''){ %>
+          <%- include('components/sidebar-label', { ranks: ranks}) %>
+        <% } %>
+      </div>
+      <div class="c-col-md-1" ></div>
+    </div>
+  </div>
+  <script src="/js/serializeData.js"></script>
+  <script src="/js/pagination.js"></script>
+<%- include('footer') %>

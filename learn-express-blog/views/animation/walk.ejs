@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>小人走路动画</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  .sprite{
+    width: 235px;
+    height: 400px;
+    display: block;
+    background: url(http://www.w3cplus.com/sites/default/files/blogs/2015/1506/walker.png) no-repeat scroll 0 0 transparent;
+    margin: 3em auto;
+    -webkit-animation: walk 1s infinite;
+    animation: walk steps(5,end) 1s infinite;
+    /*steps 函数指定了一个阶跃函数，第一个参数指定了时间函数中的间隔数量（必须是正整数）；
+    第二个参数可选，接受 start 和 end 两个值，指定在每个间隔的起点或是终点发生阶跃变化，默认为 end。*/
+  }
+
+  @-webkit-keyframes walk {
+    from{
+      background-position: 0 0;
+    }
+
+    to{
+      background-position: 0 -4000px;
+    }
+  }/*相当于0%+100%*/
+
+  @keyframes walk {
+    from{
+      background-position: 0 0;
+    }
+
+    to{
+      background-position: 0 -4000px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="sprite"></div>
+  <!-- <script type="text/javascript">
+    function mainCli(){
+      var oCli = document.getElementById('MainClick').click();
+
+      setTimeout("mainCli()",10);
+    }
+    mainCli();
+    function isTypeofNull(a) {
+    if(!a && typeof a === 'object') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  </script> -->
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Web Storage SQL API</title>
+</head>
+<body>
+  <h1>Web Sql Database</h1>
+  <table id="racers" border="1" cellspaceing="0" style="width:100%">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>名字</th>
+      </tr>
+    </thead>
+    <tbody id="friends"></tbody>
+  </table>
+  <script>
+    // 新建一个数据库 名字叫db 版本是1.0 注释是my first database 大小是2*1024*1024
+    // web数据库不会太大，按需申请, 定时清空及重置。打开和创建二功能合一
+    var db = openDatabase('db','1.0','my first database',2*1024*1024);
+    // console.log(db);
+    // 初始化数据库
+    function initDatabase() {
+      var names = ['小叶子','蜗牛','chen'];
+      // db 是 数据库对象 sql 空间 存储的事务
+      db.transaction(function(tx) {
+        // 开始一次存储事务了
+        // console.log(tx);
+        tx.executeSql('CREATE TABLE IF NOT EXISTS friends (id integer primary key autoincrement, name)');
+        for (var i = 0; i < names.length; i++) {
+          var name = names[i];
+          tx.executeSql('insert into friends (name) VALUES (?)',[name]);
+        }
+        doQuery();//做查询
+        // name.foreach(function(index,value){
+        //   console.log('index' + index + 'value' + value);
+        // })
+      })
+    }
+// 将数据从数据库里查询出来，并显示到页面上
+    function doQuery() {
+      db.transaction(function(tx){
+        tx.executeSql('SELECT * FROM friends',[],function(tx,result){
+          // console.log(result.rows);
+          for (var i = 0; i < result.rows.length; i++) {
+            var item = result.rows.item(i);
+            // console.log(item);
+            log(item.id,item.name);
+          }
+        });
+      })
+    }
+
+    function log(id,name) {
+      // console.log(id,name);
+      var tr = document.createElement('tr');
+      var idCell = document.createElement('td');
+      var nameCell = document.createElement('td');
+      idCell.appendChild(document.createTextNode(id));
+      nameCell.appendChild(document.createTextNode(name));
+      tr.appendChild(idCell);
+      tr.appendChild(nameCell);
+      // console.log(tr);
+      document.getElementById('friends').appendChild(tr);
+      // console.log(document.getElementById('friends'));
+    }
+
+    initDatabase();
+  </script>
+</body>
+</html>

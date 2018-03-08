@@ -1,0 +1,94 @@
+.works-box {
+  width: 100%;
+  height: 100%;
+  padding: 1% 2%;
+}
+
+.selectWorks {
+  width: 30%;
+  height: 30%;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.work-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.screen-eye {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.screen-eye:hover {
+  background-color: #3F3F3F;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.icon-work {
+  position: absolute;
+  top: 50%;
+  opacity: 0;
+}
+
+.eye {
+  -webkit-animation: eyenarrow 0.5s forwards;
+  -moz-animation: eyenarrow 0.5s forwards;
+  -ms-animation: eyenarrow 0.5s forwards;
+  -o-animation: eyenarrow 0.5s forwards;
+  animation: eyenarrow 0.5s forwards;
+  opacity: 0;
+}
+/*可以进行深入了解 Linear infinite;*/
+
+
+@keyframes eyenarrow {
+  0% {
+    font-size: 100px;
+    top: 10%;
+    left: 30%;
+    opacity: 1;
+    color: #fff;
+  }
+  100% {
+    font-size: 40px;
+    top: 40%;
+    left: 40%;
+    opacity: 1;
+    color: #fff;
+  }
+}
+
+
+.bgc {
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: 100% auto;
+}
+/*需了解该属性的其他内容  background-size: length|percentage|cover|contain;*/
+
+
+.douban {
+  background-image: url('/img/douban.png');
+}
+
+.foo {
+  background-image: url('/img/prototype.png');
+}
+
+.anima {
+  background-image: url('/img/anim.png');
+  background-size: contain;
+  background-position: center;
+}

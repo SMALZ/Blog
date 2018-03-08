@@ -1,0 +1,31 @@
+#newlabel {
+  position: relative;
+}
+
+#newlabel li {
+  position: absolute;
+  cursor: pointer;
+  /*margin: 10px;*/
+}
+
+li.label {
+  animation: labelAction 20s infinite;
+  -webkit-animation: labelAction 20s infinite;
+  -moz-animation: labelAction 20s infinite;
+  -ms-animation: labelAction 20s infinite;
+  -o-animation: labelAction 20s infinite;
+}
+@keyframes labelAction {
+  0% {
+    left: 0px;
+    /*right: none;*/
+  }
+  50% {
+    /*right: 0px;*/
+    left: 1000px;
+  }
+  100% {
+    left: 0px;
+    /*right: none;*/
+  }
+}

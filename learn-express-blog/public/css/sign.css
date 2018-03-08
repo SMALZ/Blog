@@ -1,0 +1,171 @@
+.signFix {
+  width: 100%;
+  height: 100%;
+  background-color: #F2453E;
+  padding-top: 20px;
+}
+
+.signContainer {
+  position: relative;
+  margin: 0 auto;
+  background-color: #fff;
+  width: 300px;
+  height: 80%;
+  border-radius: 4px;
+  box-shadow: 3px 4px 10px #C43832;
+  -webkit-box-shadow: 3px 4px 10px #C43832;
+  -ms-box-shadow: 3px 4px 10px #C43832;
+  -moz-box-shadow: 3px 4px 10px #C43832;
+  -o-box-shadow: 3px 4px 10px #C43832;
+}
+
+.icons-logo {
+  margin: 0 auto;
+  width: 33.33%;
+  padding: 20px 0;
+}
+
+.form-info {
+  margin-top: 20%;
+}
+
+.logo-sign {
+  font-size: 40px !important;
+}
+
+.icon-c {
+  color: #26AEC3;
+}
+
+.icon-T {
+  color: #A7C32E;
+}
+
+.icon-item {
+  font-size: 20px;
+  color: #414E5B;
+}
+
+.icon-zhongfumima {
+  font-weight: 500;
+}
+
+.icon-touxiang1 {
+  font-weight: 500;
+}
+
+input {
+  border: 0;
+  outline: medium;
+  padding: 5px 0;
+}
+
+.inputBorder {
+  display: inline-block;
+  vertical-align: bottom;;
+  width: 80%;
+  border-bottom: 1px solid #9E9E9E;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-bottom: -8px;
+}
+
+.btn-login {
+  background-color: #2FA599;
+  width: 80%;
+  margin: 10%;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 1px #ccc;
+  -ms-box-shadow: 2px 2px 1px #ccc;
+  -moz-box-shadow: 2px 2px 1px #ccc;
+  -o-box-shadow: 2px 2px 1px #ccc;
+  box-shadow: 2px 2px 1px #ccc;
+}
+
+.btn-login:hover {
+  animation: btnLogin 0.5s forwards;
+  -webkit-animation: btnLogin 1s forwards;
+  -moz-animation: btnLogin 0.5s forwards;
+  -o-animation: btnLogin 0.5s forwards;
+  -ms-animation: btnLogin 0.5s forwards;;
+}
+
+@keyframes btnLogin {
+  0%{
+    background-color: #2FA599;
+    -webkit-box-shadow: 2px 2px 1px #ccc;
+    -ms-box-shadow: 2px 2px 1px #ccc;
+    -moz-box-shadow: 2px 2px 1px #ccc;
+    -o-box-shadow: 2px 2px 1px #ccc;
+    box-shadow: 2px 2px 1px #ccc;
+  }
+  100% {
+    background-color: #3FB6aa;
+    -webkit-box-shadow: 3px 4px 10px #ddd;
+    -ms-box-shadow: 3px 4px 10px 2px #ddd;
+    -moz-box-shadow: 3px 4px 10px 2px #ddd;
+    -o-box-shadow: 3px 4px 10px 2px #ddd;
+    box-shadow: 3px 4px 10px 2px #ddd;
+
+  }
+}
+
+.btn-visit {
+  margin-top: 0;
+}
+
+
+.form-group {
+  padding: 0 20px;
+  margin: 20px 0 0 10px;
+}
+
+
+.signout {
+  position: absolute;
+  bottom: 20px;
+  left: 10%;
+}
+
+.forgetpass {
+  position: absolute;
+  bottom: 20px;
+  right: 10%;
+}
+
+.fileBorder {
+  /*overflow: hidden;*/
+  border-bottom-color: #fff;
+  position: relative;
+}
+
+.modalFile {
+  border: 1px solid #9E9E9E;
+  padding: 2px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modalFile:focus {
+  border-color: #2FA599;
+}
+
+.avatar {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+.footerText a{
+  color: #1B9CE2;
+}

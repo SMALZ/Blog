@@ -1,0 +1,40 @@
+<%- include('header1') %>
+<link rel="stylesheet" href="/css/works.css">
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+<%- include('components/nav-setting') %>
+<div class="works-box">
+  <a href="works/douban" class="selectWorks" target="_blank">
+    <div class="work-box douban bgc">
+      <div class="screen-eye" onmouseover="showEyeNarrow(this)" onmouseout="hiddenEyeNarrow(this)">
+        <i class="iconfont icon-eye icon-work" id="eye"></i>
+      </div>
+    </div>
+  </a>
+  <a href="works/test/foo" class="selectWorks" target="_blank">
+    <div class="work-box bgc foo">
+      <div class="screen-eye" onmouseover="showEyeNarrow(this)" onmouseout="hiddenEyeNarrow(this)">
+        <i class="iconfont icon-eye icon-work" id="eye"></i>
+      </div>
+    </div>
+  </a>
+  <a href="works/animation" class="selectWorks" target="_blank">
+    <div class="work-box bgc anima">
+      <div class="screen-eye" onmouseover="showEyeNarrow(this)" onmouseout="hiddenEyeNarrow(this)">
+        <i class="iconfont icon-eye icon-work" id="eye"></i>
+      </div>
+    </div>
+  </a>
+</div>
+<script type="text/javascript">
+  function showEyeNarrow(that) {
+    $(that).find('#eye').addClass('eye');
+  }
+  function hiddenEyeNarrow(that) {
+    $(that).find('#eye').removeClass('eye');
+  }
+
+</script>
+
+<%- include('footer') %>

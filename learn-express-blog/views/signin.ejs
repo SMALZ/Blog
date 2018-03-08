@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/css/icon.css">
+<link rel="stylesheet" href="/css/sign.css">
+<body>
+<div class="signFix">
+  <div class="signContainer">
+    <div class="icons-logo">
+      <i class="iconfont icon-c logo-sign"></i>
+      <i class="iconfont icon-T logo-sign"></i>
+    </div>
+    <% if(error) { %>
+      <div class="errorSign c-notification-box poL"><%= error %></div>
+    <% } %>
+    <!-- <div class="col-md-"></div>
+    <div class="eight wide column"> -->
+    <form action="/signin" class="form-info" method="post">
+      <div class="form-group">
+        <i class="iconfont icon-weibiaoti1 icon-item"></i>
+        <!-- <label for="">用户名</label> -->
+        <div class="inputBorder">
+          <input type="text" placeholder="用户名" name="name" autocomplete="off" onfocus="showIcon(this)" onblur="hiddenIcon(this)">
+        </div>
+      </div>
+      <div class="form-group">
+        <i class="iconfont icon-password icon-item"></i>
+        <!-- <label for="">密码</label> -->
+        <div class="inputBorder">
+          <input type="password" placeholder="密码" text="password" name="password" autocomplete="off" onfocus="showIcon(this)" onblur="hiddenIcon(this)">
+        </div>
+      </div>
+      <input type="hidden" name="sign" id="sign" value="0">
+      <input type="submit" class="btn-login" value="登  录" readonly onclick="signIn()">
+      <input type="submit" class="btn-login btn-visit" value="游  客" onclick="signCardId()" readonly>
+    </form>
+    <div class="signout footerText"><a href="/signup">现在注册</a></div>
+    <div class="forgetPass footerText"><a href="">忘记密码?</a></div>
+    </div>
+  </div>
+</div>
+<script src="/js/sign.js"></script>

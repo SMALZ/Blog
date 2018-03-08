@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+模式
+<body>
+  <script type="text/javascript">
+    var closeDoorCommand={
+      execute:function(){
+        alert("关门");
+      }
+    }
+    var openComputerCommand={
+      execute:function(){
+        alert("打开电脑");
+      }
+    }
+    var openQQCommand={
+      execute:function(){
+        alert("登录QQ");
+      }
+    }
+    var playYysCommand={
+      execute:function(){
+        alert("玩阴阳师");
+      }
+    }
+    var backRoomCommand = {
+      add:function(command){
+        this.commandList.push(command);
+      },
+      commandList:[],
+      execute:function(){
+        for (var i = 0; i < this.commandList.length; i++) {
+          this.commandList[i].execute();
+        }
+      }
+    }
+    backRoomCommand.add(closeDoorCommand);
+    backRoomCommand.add(openComputerCommand);
+    backRoomCommand.add(openQQCommand);
+    backRoomCommand.add(playYysCommand);
+    backRoomCommand.execute();
+    // backRoomCommand.execute();
+    // closeDoorCommand.execute();
+    // openComputerCommand.execute();
+    // openQQCommand.execute();
+  </script>
+</body>
+</html>

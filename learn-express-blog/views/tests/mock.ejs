@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://mockjs.com/dist/mock.js"></script>
+</head>
+<body>
+<div class="info-box">
+  <img class="avatar" />
+  <p class="title">无名氏</p>
+  <p class="desc">这个家伙很懒什么都没有留下</p>
+</div>
+<script>
+Mock.mock('http://info',{
+  "errorcode":1,  //没有问题，请求成功
+  "title":'小叶子',
+  'desc':'建途网是江西最好的互联网公司，Oh,yeah!',
+  'avatar':'http://think2011.qiniudn.com/mock.png'
+})
+var xhr = new XMLHttpRequest();
+xhr.open("post","http://info",true);
+xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xhr.send();
+xhr.onreadystatechange = function(){
+  if(xhr.readyState == 4) {
+    // 304 没变过， 直接使用缓存
+    if((xhr.status >= 200 && xhr.status <= 300) || xhr.status == 3-4) {
+      var data = JSON.parse(xhr.responseText);
+      // console.log(data);
+      if(data.errorcode == 0) {
+        alert('数据有误');
+        return;
+      }
+
+      var title = data.title;
+      var pic = data.avatar;
+      var desc = data.desc;
+      document.querySelector('.title').innerHTML = title;
+      document.querySelector('.desc').innerHTML = desc;
+      document.querySelector('.avatar').src = pic;
+
+
+
+
+    } else {
+      alert("Request was unsuccessful");
+    }
+  }
+}
+</script>
+</body>
+</html>

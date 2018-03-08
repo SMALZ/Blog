@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    html,body{
+      width: 100%;
+      height: 100%;
+      outline: 0;
+    }
+    .ele{
+      width: 360px;
+      height: 508px;
+      position: fixed;
+      border: 1px solid gray;
+      background: #fff;
+      font-size: 12px;
+      border-radius: 5px;
+      left: 503px;
+      top: 79.5px;
+    }
+    .title{
+      font-size: 16px;
+      font-weight: 400;
+      padding: 10px 0 10px 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .content{
+      margin: 20px;
+      width: 100%;
+      height: 100%;
+    }
+    .container{
+      width: 90%;
+      background: #dbf0fa;
+      height: 83%;
+    }
+    .pic-select{
+      background: url(/img/fetch-takeout-sprites.png) 0 -120px no-repeat;
+      width: 186px;
+      height: 188px;
+      margin: 0 auto;
+      display: block;
+    }
+    .fetchtakeout-btn{
+      display: block;
+      width: 271px;
+      height: 40px;
+      cursor: pointer;
+      margin: -45px auto 15px;
+      background: url(/img/fetch-takeout-sprites.png) no-repeat;
+    }
+    .fetchtakeout-btn:hover{
+      background-position: 0 -40px;
+    }
+    .choose{
+      position: relative;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #777;
+      background: #dbf0fa;
+    }
+    .choose::before{
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 5px;
+      display: block;
+      height: 7px;
+      width: 40px;
+      background-color: #ccc;
+    }
+    .choose::after{
+      content: '';
+      position: absolute;
+      top: 5px;
+      right: 15px;
+      display: block;
+      height: 7px;
+      width: 40px;
+      background-color: #ccc;
+    }
+    .footer{
+      color: #fff;
+      position: absolute;
+      bottom: 63px;
+      font-size: 73px;
+      right: 0;
+      line-height: 1em;
+      font-weight: bold;
+    }
+    ul,li{
+      list-style: none;
+    }
+    .list{
+      padding: 20px;
+      height: 228px;
+    }
+    .col{
+      color: #fe5a23;
+      font-weight: 700;
+      background: url(/img/fetch-takeout-sprites.png) 0 -320px no-repeat;
+      height: 19px;
+      line-height: 19px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ele">
+    <h2 class="title">谁去拿外卖</h2>
+    <div class="content">
+      <div class="container">
+        <h2 class="pic-select"></h2>
+        <button class="fetchtakeout-btn" id="btn"></button>
+        <div class="choose">随机到最小数字的人去拿外卖</div>
+        <div class="footer" id="footer">↓ Start</div>
+        <ul class="list" id="list">
+          <!-- <li class="col" id="min_number">扔出了一个 26</li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    window.onload = function(){
+      var btn = document.getElementById('btn');
+      var min_number = function(){
+
+      }//存储最小节点和节点数值
+
+
+      var n = getliN();//计算li数量
+      var i = 0;
+
+
+      btn.addEventListener('click',function(){
+        i = i + 1;
+        document.getElementById('footer').style.display = "none";
+        var li=document.createElement('li');
+        var randNm = getRandom(0,100);
+        var te="扔出了一个" + randNm;
+        li.innerHTML = te;
+
+        if (!min_number.number) {
+          min_number.number = randNm;
+          min_number.node = li;
+          li.classList.add('col');
+        }
+          else if ( randNm < min_number.number) {
+            min_number.node.classList.remove('col');
+            min_number.number = randNm;
+            min_number.node = li;
+            li.classList.add('col');
+        }
+        document.getElementById('list').appendChild(li);
+
+        removeLi();
+      })
+      function getRandom(min,max)
+              {
+                  var rand = (Math.random()*max)-min;
+                  return Math.round(rand);
+              }
+      function getliN(){
+        // var ul = document.getElementById('list').clientHeight;
+        // var ul = document.getElementById('list');
+        var ul = 228;
+        alert("height: "+ul+"px");
+        var liN = ul/19;
+        return liN;
+      }
+
+      function removeLi(){
+        var ul = document.getElementById('list');
+        var lis = ul.children;
+        if( i >= n){
+          if( lis[0] === min_number.node){
+            ul.removeChild(lis[1]);
+          }else{
+            ul.removeChild(lis[0]);
+          }
+          i = i-1;
+        }
+      }
+      // randNm = function(min,max){
+      //   var roun = (Math.random()*max) - min;
+      //   var randNm = Math.round(roun);
+      //   return randNm;
+      // }
+
+    }
+
+
+
+//     var btn = $(".fetchtakeout-btn");
+//         var ul =  $(".fetchtakeout-list");
+//         var lastMinimum = {
+//
+//         };/*上次最大的 结点 以及 数*/
+//         btn.onclick = throwRandom;
+//         document.body.onkeydown = spacePress;
+//         function spacePress(e)
+//         {
+//             if(e.keyCode == 32)
+//             {
+//                 throwRandom();
+//             }
+//         }
+//         function throwRandom()
+//         {
+//             var li = document.createElement('li');
+//             var rand = getRandom(0,100);
+//             li.innerHTML = "扔出了一个"+rand;
+// //           第一次
+//             if(!lastMinimum.number)
+//             {
+//                 console.log('不存在')
+//                 lastMinimum.number=rand;
+//                 lastMinimum.node = li;
+//                 li.classList.add('selected');
+//
+//             }
+// //            本次数最小
+//             else if(lastMinimum.number > rand){
+//                 console.log('替换')
+//                 var lastLi = lastMinimum.node;
+//                 lastLi.classList.remove('selected');
+//
+//                 li.classList.add('selected');
+//                 lastMinimum.number = rand;
+//                 lastMinimum.node = li;
+//                 console.log(li)
+//             }
+//
+//             ul.appendChild(li);
+//
+//         }
+//         function $(selector)
+//         {
+//             return document.querySelector(selector);
+//         }
+//         function getRandom(min,max)
+//         {
+//             var rand = (Math.random()*max)-min;
+//             return Math.round(rand);
+//         }
+
+  </script>
+</body>
+</html>

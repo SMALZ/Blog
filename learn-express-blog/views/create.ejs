@@ -1,0 +1,140 @@
+<!-- 问题
+一：焦点选中中间位置,回车到底部会跳到中间
+二：如果博客行数超过几百万页面会乱
+三：焦点背景色未实现 -->
+
+<%- include('header') %>
+
+<div class="c-edit-post-box">
+  <%- include('components/notification') %>
+  <form action="/blog/create" method="post" class="form-horizontal" role="form">
+  <% if(post){ %>
+    <input type="hidden" name="id" value="<%= post._id %>">
+  <% } else { %>
+    <input type="hidden" name="id" value="0">
+  <% } %>
+    <div class="c-box">
+        <div class="form-group">
+          <% if(post){ %>
+            <input type="text" name="title" placeholder="笔记描述" class="c-post-title c-form-col" value="<%= post.title %>">
+          <% }else{ %>
+            <input type="text" name="title" placeholder="笔记描述" class="c-post-title c-form-col">
+          <% } %>
+        </div>
+        <div class="row">
+          <div class="c-col-md-3">
+            <div class="input-group">
+  				    <div class="input-group-btn post-rank">
+  					   <button type="button" disabled class="btn btn-default" tabindex="-1">类别</button>
+  					   <button type="button" id="list-rank" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+  						   <span class="caret"></span>
+  						   <span class="sr-only">切换下拉菜单</span>
+  					   </button>
+  						 <ul class="dropdown-menu">
+                <% if(ranks) {
+    						   ranks.forEach(function(rank){ %>
+                  <li id="select-rank" onclick="selectRank(this)"><a href="#"><%= rank %></a></li>
+                <% })} %>
+    						<li class="divider"></li>
+    						<li id="add-list">
+                  <a href="#" id="add-rank" onclick="addRankInput()">添加</a>
+                </li>
+  						 </ul>
+  				    </div>
+              <% if(post){ %>
+                <input type="text" name="rank1" disabled class="form-control" id="rank-choose" oninput="labelUse(this)" value="<%= post.rank %>">
+                <input type="text" name="rank" id="rank-choose1" value="<%= post.rank %>" hidden/>
+              <% }else{ %>
+					      <input type="text" name="rank1" disabled class="form-control" id="rank-choose" oninput="labelUse(this)">
+                <input type="text" name="rank" id="rank-choose1" hidden/>
+              <% } %>
+              <a href="#" style="" id="rank-clearR" onclick="clearRankContent()"><span class="glyphicon glyphicon-trash"></span></a>
+				    </div>
+          </div>
+          <div class="col-md-2"></div>
+          <div class="c-col-md-3">
+            <div class="input-group">
+  				    <div class="input-group-btn post-rank">
+  					   <button type="button" disabled class="btn btn-default" tabindex="-1">标签</button>
+  					   <button type="button" disabled id="list-label" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+  						   <span class="caret"></span>
+  						   <span class="sr-only">切换下拉菜单</span>
+  					   </button>
+  						 <ul class="dropdown-menu" id="archives-content" >
+                 <% var a = '';
+                    archives.forEach(function(archive){
+                        a = '-' + archive.rank + '-'  + archive.label + a;
+                    })
+                    a = a + '-';%>
+                <input type="hidden" id="archive-list" value="<%= a %>">
+    						<li class="divider"></li>
+    						<li id="add-list"><a href="#" id="add-label" onclick="addLabelInput(this)">添加</a></li>
+  						 </ul>
+  				    </div>
+              <% if(post){ %>
+                <input type="text" name="label" id="label-choose" class="form-control" value="<%= post.label %>">
+              <% }else{ %>
+					      <input type="text" name="label" id="label-choose" disabled class="form-control">
+              <% } %>
+              <a href="#" style="" id="rank-clearL" onclick="clearLabelContent()"><span class="glyphicon glyphicon-trash"></span></a>
+				    </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="c-form-col c-post-line">
+              <div class="c-textarea-bg c-bg-focus"></div>
+              <textarea readonly name="number"  rows="20" cols="1" id="c-textarea-number" class="c-textarea-number" row="10"></textarea><textarea readonly  cols="30" rows="20" class="c-textarea-nbr1" row="10" id="c-textarea-nbr1"></textarea>
+              <textarea readonly cols="30" rows="20" class="c-textarea-nbr2" row="10" id="c-textarea-nbr2"></textarea>
+              <% if(post) { %>
+                <textarea name="content" id="c-textarea-content" cols="30" rows="20" class="c-textarea" row="10" oninput="reflashDefCon()" onfocus="reflashDefCon()"><%= post.content %></textarea>
+              <% }else{ %>
+                <textarea name="content" id="c-textarea-content" cols="30" rows="20" class="c-textarea" row="10" oninput="reflashDefCon()" onfocus="reflashDefCon()" onkeydown="textareaTab(this,event)"></textarea>
+              <% } %>
+            </div>
+        </div>
+
+        <input type="submit" class="btn btn-default" value="发布">
+    </div>
+  </form>
+</div>
+<script>
+
+function textareaTab(that,e){
+  console.log('aaa');
+    var keyCode = e.keyCode || e.which;
+
+    if (keyCode === 9) {
+        var start = el.selectionStart,
+            end = el.selectionEnd;
+
+        el.value = el.value.substring(0, start)
+                + "\t"
+                + el.value.substring(end);
+
+        el.selectionStart = el.selectionEnd = start + 1;
+
+        e.preventDefault();
+    } else {}
+}
+var el = document.querySelector('textarea');
+
+el.addEventListener("keydown", function(e) {
+  console.log('aaa');
+    var keyCode = e.keyCode || e.which;
+
+    if (keyCode === 9) {
+        var start = el.selectionStart,
+            end = el.selectionEnd;
+
+        el.value = el.value.substring(0, start)
+                + "\t"
+                + el.value.substring(end);
+
+        el.selectionStart = el.selectionEnd = start + 1;
+
+        e.preventDefault();
+    }
+})
+</script>
+
+<%- include('footer') %>

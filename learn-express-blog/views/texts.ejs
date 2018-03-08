@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>随记</title>
+  <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/semantic-ui/2.1.8/semantic.min.css"> -->
+  <link rel="stylesheet" href="/css/text.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/icon.css">
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <!-- <script src="http://cdn.bootcss.com/semantic-ui/2.1.8/semantic.min.js"></script> -->
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="#postM" data-offset="20">
+<%- include('components/nav') %>
+<%- include('components/nav-setting') %>
+
+<% texts.forEach((item,value) => { %>
+    <div class="pager-box" onclick="window.open('text/' + '<%= item._id %>','_blank')">
+      <div class="pager-content"><%- item.content %></div>
+      <% if(permiSign == 2) { %>
+      <div class="pager-key" id="pagerKey" onmouseover="showTextsIcon(this)" onmouseout="hiddenTextsIcon(this)">
+        <i class="iconfont icon-edit texts-icon" onmouseover="hiddenClick(this)" onmouseout="showClick(this)" onclick="e.preventDefault();his.parentNode.nextElementSibling.submit()"></i>
+        <i class="icon-remove iconfont texts-icon" data-toggle="modal" data-target="#myModal" onmouseover="hiddenClick(this)" onmouseout="showClick(this)" onclick="pointerRemoveText(this)" id="rT<%= value %>"></i>
+      </div>
+      <form action="/text/textEdit/<%= item._id %>" method="post" id="textEditSub">
+        <input type="hidden" name="content" value="<%= item.content %>">
+      </form>
+      <input type="hidden" id="textId" value="<%= item._id %>">
+      <% } %>
+    </div>
+<% }) %>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">真的要删除这篇文章</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="removeT" onclick="removeText()">提交更改</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+var url = document.querySelector('.pager-box').getAttribute('onclick');
+function showTextsIcon(that) {
+  that.style.backgroundColor = '#ccc';
+  var icons = that.querySelectorAll('i');
+  for(var i = 0; i < icons.length; i++) {
+    icons[i].style.display = 'inline-block';
+  }
+}
+
+function hiddenTextsIcon(that) {
+  that.style.backgroundColor = '';
+  var icons = that.querySelectorAll('i');
+  for(var i = 0; i < icons.length; i++) {
+    icons[i].style.display = 'none';
+  }
+}
+
+function showClick(that) {
+  that.parentNode.setAttribute('onclick','');
+}
+
+function hiddenClick(that) {
+  that.parentNode.setAttribute('onclick',url);
+}
+
+function pointerRemoveText(that) {
+  console.log(that.id);
+  document.querySelector('#removeT').setAttribute('onclick','removeText(' + that.id + ')');
+}
+
+function removeText(btn){
+   var textId = btn.parentNode.parentNode.querySelector('#textId').value;
+   $.ajax({
+     url: '/text/' + textId + '/remove',
+     type: 'post'
+   })
+   .done(() => {
+     console.log('success');
+     btn.parentNode.parentNode.parentNode.removeChild(btn.parentNode.parentNode);
+     $('#myModal').modal('toggle');
+   })
+   .fail(() => {
+     console.log('error');
+   })
+   .always(() => {
+     console.log('complete');
+   })
+}
+
+// function pagerPointer(that) {
+//   console.log($(that).attr('src'));
+// }
+ // $('pager-box').
+ // top.location.href = 'this.getAttribute('src')'
+</script>
+</body>
+</html>

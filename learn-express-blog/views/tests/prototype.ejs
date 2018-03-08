@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+  //第一步
+    // var oButton = document.createElement('button');
+    // oButton.innerHTML = '按钮三';
+    // document.body.appendChild(oButton);
+
+  //第二步
+    // (function(){
+    //   for (var i = 0; i < 100; i++) {
+    //     var oButton = document.createElement('button');
+    //     oButton.innerHTML = '按钮' + i;
+    //     document.body.appendChild(oButton);
+    //     (function(i){
+    //       oButton.addEventListener('click',function(){
+    //         alert(i);
+    //       },false)
+    //     })(i)
+    //
+    //   }
+    // })()
+
+  //第三步
+
+    // function Button(width,height,label){
+    //   this.width = width || 50;
+    //   this.height = height || 50;
+    //   this.label = label || '按钮';
+    //   this.ele = document.createElement('button');
+    //   this.ele.innerHTML = this.label;
+    //   this.bindClick();
+    // }
+    // Button.prototype.setStyle = function(){
+    //   this.ele.style.width = this.width + 'px';
+    //   this.ele.style.height = this.height + 'px';
+    // }
+    // Button.prototype.render = function(parentNode){
+    //   parentNode.appendChild(this.ele);
+    // }
+    // Button.prototype.bindClick = function(){
+    //   that = this;
+    //   this.ele.addEventListener('click',function(){
+    //     alert("Button" + that.label + 'clicked');
+    //   }.false)
+    // }
+    // var btn = new Button(60,60,"chen");
+    // btn.render(document.body);
+    // btn.setStyle();
+    //
+    // function AElement(width,height,text){
+    //   this.width = width;
+    //   this.height = height;
+    //   this.text = text;
+    //   this.ele = document.createElement('a');
+    //   this.ele.innerHTML = text;
+    //   this.bindClick();
+    // }
+    // AElement.prototype.render = function(parentNode){
+    //   parentNode.appendChild(this.ele);
+    // }
+    // AElement.prototype.bindClick = function(){
+    //   that = this;
+    //   this.ele.addEventListener('click',function(){
+    //     e.preventDefault();
+    //     alert('您点击了' + that.text);
+    //   },false);
+    // }
+    // //(new AElement(50,50,'Chen')).render(document.body);
+    // var objP = new AElement(20,20,'aa');
+    // objP.render(document.body);
+
+
+//第四步
+  // function Widget(width,height,label){
+  //   this.width = this.width || 50;
+  //   this.height = this.height || 50;
+  //   this.label = this.label || '标签';
+  //   this.ele = null;
+  // }
+  // Widget.prototype.render = function(parentNode){
+  //   if (this.ele) {
+  //     this.ele.style.width = this.width + 'px';
+  //     this.ele.style.height = this.height + 'px';
+  //     parentNode.appendChild(this.ele);
+  //   }
+  // }
+  // function Button(width,height,label){
+  //   //调用父类构造器
+  //   Widget.call(this,width,height,label);
+  //   this.label = label;
+  //   this.ele = document.createElement('button');
+  //   this.ele.innerHTML = this.label;
+  // }
+  // //console.log(Widget.prototype);
+  // Button.prototype = Object.create(Widget.prototype);
+  // Button.prototype.render = function(parentNode){
+  //   Widget.prototype.render.call(this,parentNode);
+  //   var that = this;
+  //   this.ele.addEventListener('click',function(){
+  //     that.onClick.bind(that)();
+  //   },false)
+  // }
+  // Button.prototype.onClick = function(evt){
+  //   console.log('Button' + this.label + 'clicked');
+  // }
+  // var btn1 = new Button(125,30,'登录');
+  // btn1.render(document.body);
+  // var btn2 = new Button(150,40,'注册');
+  // btn2.render(document.body);
+
+  //第五步
+    // class Widget{
+    //   constructor(width,height){
+    //     this.width = width;
+    //     this.height = height;
+    //     this.ele = null;
+    //   }
+    //   render(parentNode){
+    //     if (this.ele) {
+    //       this.ele.style.width = this.width + 'px';
+    //       this.ele.style.height = this.height + 'px';
+    //       parentNode.appendChild(this.ele);
+    //     }
+    //   }
+    // }
+    //
+    // class Button extends Widget{
+    //   constructor(width,height,label) {
+    //     super(width,height);  //父类
+    //     this.label = label;
+    //     this.ele = document.createElement('button');
+    //     this.ele.innerHTML = this.label;
+    //   }
+    //   render(parentNode){
+    //     super.render(parentNode);
+    //     var that = this;
+    //     this.ele.addEventListener('click',function(){
+    //       that.onClick.call(that);
+    //     })
+    //   }
+    //   onClick(evt){
+    //     alert('Button' + this.label + 'clicked');
+    //   }
+    // }
+    // var btn1 = new Button(125,30,'登录');
+    // btn1.render(document.body);
+    // var btn2 = new Button(150,40,'注册');
+    // btn2.render(document.body);
+
+
+
+
+    //多态
+    var cat = function() {}
+    var dog = function() {}
+
+    cat.prototype.sound = function() {
+      console.log('喵喵喵');
+    }
+
+    dog.prototype.sound = function() {
+      console.log('汪汪汪');
+    }
+
+    function getSound(animal) {
+      if (animal.sound instanceof Function) {
+        animal.sound();
+      }
+    }
+
+    getSound(new cat());
+    getSound(new dog());
+
+
+    //封装
+    var myObject = (function() {
+      var name = 'sven';
+      return {
+        getName:function(){
+          return name;
+        }
+      }
+    })();
+
+    console.log(myObject.name);
+    console.log(myObject.getName());
+
+    //原型模式
+    var Plane = function() {
+      this.blood = 100;
+      this.attackLevel = 1;
+      this.defenseLevel = 1;
+    };
+
+    // function Plane() {
+    //   this.blood = 100;
+    //   this.attackLevel = 1;
+    //   this.defenseLevel = 1;
+    // }
+
+    var plane = new Plane();
+    // plane.blood = 500;
+    // plane.attackLevel = 10;
+    // plane.defenseLevel = 7;
+    console.log(Plane);
+    console.log(plane);
+
+    var clonePlane = Object.create(plane);
+    console.log(clonePlane);
+
+    var F = function(){};
+    //function F(){}
+    F.prototype = plane;
+    console.log(new F);
+    console.log(F.prototype);
+
+    //原型模式对象理解
+    function person(name){
+      this.name = name;
+    };
+
+    person.prototype.getName = function(){
+      return this.name;
+    };
+
+    var objectFactory = function(){
+      var obj = new Object();
+      constructor = [].shift.call(arguments);
+      obj._proto_ = constructor.prototype;
+      console.log(obj);
+      var rec = constructor.apply(obj,arguments);
+      console.log(rec);
+      return typeof rec === 'object'?rec:obj;
+    };
+
+  var a = objectFactory(person,'chen');
+  console.log(a);
+  console.log(a.name);
+  // console.log(a.getName());
+
+
+  </script>
+</body>
+</html>

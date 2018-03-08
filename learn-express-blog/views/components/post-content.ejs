@@ -1,0 +1,31 @@
+  <div class="c-post-unit" id="postUnit">
+    <div class="entry">
+      <header>
+        <h2 class="entry-title">
+          <a href="/blog/<%= post._id %>"><%= post.title %></a>
+        </h2>
+      </header>
+      <div class="entry-content">
+        <div class="archive-content">
+          <div class="c-post-content">
+            <article class="markdown-body"><%- post.content %></article>
+          </div>
+        </div>
+      </div>
+      <div class="post-other-info">
+        <span><%= post.time %></span>
+        <i class="iconfont icon-eye"></i>
+        <span><%= post.pv %></span>
+        <a href="/blog/<%= post._id %>" class="post-comment-count">
+          <i class="iconfont icon-speechbubble"></i>
+          <span><%= post.commentCount %></span>
+        </a>
+      </div>
+    </div>
+    <span class="entry-more" style="cursor:pointer">
+      <a href="/blog/<%= post._id %>" >阅读全文</a>
+    </span>
+    <span class="entry-label" onclick="this.children[0].click()" style="cursor:pointer">
+      <a href="/archive/<%= post.rank %>/<%= post.label %>"><%= post.label %></a>
+    </span>
+  </div>

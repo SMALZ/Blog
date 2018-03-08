@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>简单工厂</title>
+</head>
+<body>
+<script>
+// 店里卖的好几款   款式，多少价位，品牌的。
+ // 自行车商店类
+
+var Giant = function(){
+  this.brand = '捷安特'
+}
+Giant.prototype = {
+  assemble:function(){
+    console.log(this.brand + '自行车正在组装');
+  },
+  wash:function(){
+    console.log(this.brand + '自行车正在清洗');
+  },
+  repair:function(){
+    console.log(this.brand + '保修一年');
+  },
+  ride:function(){
+    console.log(this.brand + '保养一年')
+  }
+}
+
+var Philip = function(){
+  this.brand = '飞利浦'
+}
+Philip.prototype = {
+  assemble:function(){
+    console.log(this.brand + '自行车正在组装');
+  },
+  wash:function(){
+    console.log(this.brand + '自行车正在清洗');
+  }
+}
+
+var Uc = function(){
+  this.brand = 'UC'
+}
+Uc.prototype = {
+  assemble:function(){
+    console.log(this.brand + '自行车正在组装');
+  },
+  wash:function(){
+    console.log(this.brand + '自行车正在清洗');
+  }
+}
+
+
+var Forever = function() {
+  this.brand = '永久';
+}
+Forever.prototype = {
+  wash:function(){
+    console.log(this.brand + '正在清洗');
+  },
+  assemble:function(){
+    console.log(this.brand + '正在组装');
+  },
+  repair:function(){
+    console.log(this.brand + '保修一年');
+  },
+  ride:function(){
+    console.log(this.brand + '保养一年')
+  }
+
+}
+// 哨兵   规则 类 该有的那些方法
+// 名字  方法
+var Interface =  function (name,methods) {
+  if(arguments.length != 2) {
+    throw new Error('在调用Interface类时，只传递了'
+     + arguments.length + '个参数，但我们希望要两个参数');
+  }
+  this.name = name;
+  this.methods = [];
+  // 遍历了methods
+  for(var i =0,len=methods.length; i<len;i++) {
+    // typeof 每个类型是否是字符串
+    if(typeof methods[i] != 'string') {
+      throw new Error('需要传递为字符型的函数名字')
+    }
+    this.methods.push(methods[i]);
+  }
+}
+// prototype    static 方法
+Interface.ensureImplements = function(obj){
+
+  if(arguments.length < 2) {
+    throw new Error('至少需要两个参数');
+  }
+  // 从第二个参数开始
+  for(var i = 1,len = arguments.length; i < len; i++) {
+    // 一个对象可能具有需要满足的多个接口。
+    var interface = arguments[i];
+    // 对象的构造器   构造函数
+    if(interface.constructor !== Interface) {
+      throw new Error('需要是Interface 的实例')
+    }
+    for(var j = 0,methodsLen = interface.methods.length;j < methodsLen;j++) {
+      // 二重循环过后，所有的接口们要求的方法，都会被过一遍
+      var method = interface.methods[j];
+      // obj形参， 是这个方法的第一个参数， 检测的那个对象
+      // obj 对象字面量或对象， giant.wash()
+      if(!obj[method] || typeof obj[method] !== 'function'){
+        throw new Error('对象没有实现' + interface.name + '的' + method+'方法');
+      }
+    }
+  }
+}
+
+// var bicycleInterface = new Interface('Bicycle',['assemble','wash']);
+// var customerServiceInterface = new Interface('customService',['repair','ride'])
+// // var foreverBicycle =  new Forever();
+// // Interface.ensureImplements(foreverBicycle,bicycleInterface);
+BicycleFactory = {
+  createBicycle: function(model){
+    var bicycle;
+    switch(model) {
+      case 'Giant':
+        bicycle = new Giant();
+      break;
+      case 'Philip':
+        bicycle = new Philip();
+      break;
+      case 'Uc':
+        bicycle = new Uc();
+      break;
+    }
+    var bicycleInterface = new Interface('Bicycle',['assemble','wash']);
+    var customerServiceInterface = new Interface('customService',['repair','ride'])
+    Interface.ensureImplements(bicycle,
+      bicycleInterface,customerServiceInterface);
+      return bicycle;
+  }
+}
+
+var BicycleShop = function(){
+
+}
+BicycleShop.prototype = {
+  // 卖车
+  sellBicycle:function(model){
+    var bicycle = BicycleFactory.createBicycle('Giant');
+    bicycle.assemble();
+    bicycle.wash();
+    bicycle.repair();
+    bicycle.ride();
+    return bicycle;
+  }
+}
+
+var shop = new BicycleShop();
+shop.sellBicycle('Giant');
+
+//自行车工厂
+
+
+// var shop = new BicycleShop();
+// shop.sellBicycle('Giant');
+
+// Interface.ensureImplements(bicycleInterface,Forever)
+
+// 接口 Interface   类式面向对象编程的核心。
+// 保证你的对象都具有的一些方法，接口
+// 面向对象的编程， 面向接口的编程
+
+</script>
+</body>
+</html>

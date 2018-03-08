@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <title>手淘年货节舞龙揭幕</title>
+    <link rel="stylesheet" href="http://www.w3cplus.com/demo/dragon/css/style.min.css" rel="stylesheet">
+    <!-- /*<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            min-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            background: transparent;
+        }
+        body{
+            min-height: 100%;
+            background: url(http://gw.alicdn.com/mt/TB1.sknLXXXXXbEXpXXXXXXXXXX-750-1333.png) no-repeat;
+            -webkit-background-size: 100%;
+            background-size: 100%;
+        }
+        .dragon-poplayer,.dragon-section{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*width: 10rem;*/
+            /*height: 100%;*/
+            overflow: hidden;
+        }
+        .dragon-poplayer{
+            background-color: rgba(255,255,255,.4); /*opacity ?*/
+
+        }
+        .dragon-poplayer *{
+            /*transform: translate3d(0,0,0);*/
+
+        }
+        .dragon-play{
+            width: 100%;
+            height: 410px;
+            background: url("http://gw.alicdn.com/mt/TB13eupLpXXXXaGXXXXXXXXXXXX-750-821.png ")
+            no-repeat center;
+            background-size: 100%;
+            position: absolute;
+            z-index: 10;
+        }
+        .dragon-play .music{  /*声音 checkbox*/
+            position: absolute;
+            width: 140px;
+            height: 20px;
+            top: 135px;
+            left: 160px;
+            z-index: 12;
+        }
+        .dragon-play .music input[type="checkbox"],.dragon-playing{
+            opacity: 0;
+        }
+        .dragon-play .music label::before{
+            content: '';
+            display: inline-block;
+            width: 23px;
+            height: 20px;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAAoCAMAAABZ/FMmAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABgUExURUxpcX9/AP+2SIhTKIhRKIhSKYhRKP//AP9/f4hRKIpRKn8/P4lRKIlRKIlRJ4hSKYlRKH9MM4lRKIhRKZ9fH4pRKf/ht4lSKfzetJJcM9awhvnasNexh9avhdq0itmyidro4WkAAAAWdFJOUwACAz7W+GsBAr1tBPm3cfLbCvPYCD8S4xaNAAAAvklEQVQ4y+2Uyw6CMBBF2wpMi4hPOgVR//8vnYULU28TZ9EdN4GQcBpOG+Yas2XLd4jo8/AnLjfbhZaztKGziJdrahim2cEv2AIuC/ZIqGOelxSzpGVm7pH/gfkRQVbmgISOzHfEJ9k04kU0wsgL5KPiZYGOV/qoeaWPdr+k9lf6eB3vqe55kqnrQ97X/t8umnkh52QeX4h/onl0zo943leZ9/H3fIy5XUt9cjrDAir21VQoRenDIYeH0IO2egP0nUKfYmiKBAAAAABJRU5ErkJggg== ")
+            no-repeat;
+            background-size: 100%;
+        }
+        .dragon-play .music input[type="checkbox"]:checked + label:before{
+            content: "";
+            display: inline-block;
+            width: 23px;
+            height: 20px;
+            background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAAoCAMAAABZ/FMmAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABgUExURUxpcYlRKIhSKIhRKIdXJ4lSKIlRKNaVKYlRKIdRKIpTKIlRJ4lRKIhRKIlRKYlRKP/ht4lSKY5YL7GCWfnZr9myiZNdNP3etJpnPeG8kvLRp4tVK7yQZ8abcqd2TM+nfUXeU6QAAAAQdFJOUwDSVfkIQrwBbRMcNvLdpo3GTOUuAAABk0lEQVQ4y7WV25aCMAxFC7YEimjDHUX9/7+cFGSgNXV1HiYPLC075SThFCH+LQohBcTjCihBxtK6oP1TGa8FAHIdyYOQBehUR6ovSEtZ5rG1agm6VFl8Z2RaquQP+EVdL5GFgpb6XFW5swZbFz4rVVAiYnq4t9CQZyf04pTlaQo5/boUTm9p1AmyUSmLo9dJgABOz7CXTHo4bdJ3g3Fiapu5XnISvwUiQ+xc2rzGZpo53MYZsXXxB+LULDjXeFp26Buh84ojMxKf7wgdnxjgKcHlu5H+9xjkiyst33Z87+a48L5HlpE006Z9x+vW8qUvZx1W3/o49Ywu6sMNZ3vvjo3Fh3rHZ2M4/StP3Iv4A27z2XrThb/ThEzj4hPff1twTQn941CrFWfC87rbBBcP6VneB3rAQfs2DnZ/Afiu+De2YYT1PI8uGc1X3u7fNgxuvr1v85vuX+Y7//bL8Oj75/icD84ZyMCcntWPw40s7PiMXtWM4zm/U35HJsiZfgpZhc6Tiv1AQOi8SlToXOXPQ+ZE/QHaEDhILKP/igAAAABJRU5ErkJggg==);
+            background-size: 100%;
+        }
+        .dragon-play .music label{
+            white-space: nowrap;
+            display: block;
+            position: absolute; /*绝对定位 */
+            top: -1px;
+            left: 0;
+            font-size: 0;
+            width: 100%;
+        }
+        #music{  /*audio*/
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .dragon-ready-play.is-animationed{
+            animation:fadeOut 1.5s ease-in both;/*与forwards效果类似*/
+            -webkit-animation:fadeOut 1.5s ease-in both;
+        }
+        @-webkit-keyframes fadeOut {
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        @keyframes fadeOut {
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        #close{
+            position: fixed;
+            top: 50px;
+            right: 35px;
+            overflow: hidden;
+            z-index:9999;
+            width: 44px;
+            height: 44px;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU4QjJGRTVFQUVFQzExRTU4RDQ4RUNEN0MzRDU4RjIzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU4QjJGRTVGQUVFQzExRTU4RDQ4RUNEN0MzRDU4RjIzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RThCMkZFNUNBRUVDMTFFNThENDhFQ0Q3QzNENThGMjMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RThCMkZFNURBRUVDMTFFNThENDhFQ0Q3QzNENThGMjMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6iy3C4AAAIl0lEQVR42sybe2xU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 ")
+            center no-repeat;
+            background-size: 50%;
+        }
+        .dragon-ready-play{
+            z-index: 1000;
+        }
+        .dragon-playing.is-animationed {
+            -webkit-animation: fadeIn 1.5s ease-in both;
+            animation: fadeIn 1.5s ease-in both;
+
+        }
+        @keyframes fadeIn {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        .dragon-wrap{
+            position: absolute;
+            width: 100%;
+            height: 112px;
+            background:url("http://gw.alicdn.com/mt/TB17q71LXXXXXbWXpXXXXXXXXXX-750-224.png ")
+            center no-repeat;
+            background-size: 100%;
+            top: 180px;
+        }
+        .dragon-content{
+            margin-left: auto;
+            margin-right: auto;
+            width: 295px;
+            height: 92px;
+            position: relative;
+
+        }
+        .dragon-content .dragon{
+            position: absolute;
+            height: 94px;
+            top: 0;
+
+        }
+        .dragon-content .dragon1{
+            width: 89px;
+            height: 94px;
+            left: 0;
+            z-index: 5;
+            background: url("http://gw.alicdn.com/mt/TB16t_sIFXXXXaXapXXXXXXXXXX-1780-188.png")
+            no-repeat;
+            -webkit-background-size: 890px 94px;
+            background-size: 890px 94px;
+            /*background-position: -90px 0px;*/
+        }
+        .dragon-content .dragon2{
+          width: 59px;
+          height: 74px;
+          left: 62px;
+          z-index: 4;
+          background: url("http://gw.alicdn.com/mt/TB1WpAfLXXXXXb2XFXXXXXXXXXX-1180-148.png") no-repeat;
+          -webkit-background-size: 590px 74px;
+          background-size: 590px 74px;
+          top: 20px;
+        }
+        .dragon-content .dragon3 {
+          z-index: 3;
+          width: 60px;
+          height: 94px;
+          left: 120px;
+          background: url(http://gw.alicdn.com/mt/TB1qJ67LXXXXXX7aXXXXXXXXXXX-1200-188.png) no-repeat;
+          background-size: 600px 94px;
+        }
+
+        .dragon-content .dragon4 {
+          width: 63.5px;
+          height: 94px;
+          left: 168px;
+          z-index: 2;
+          background: url(http://gw.alicdn.com/mt/TB1DS3jLXXXXXXOXFXXXXXXXXXX-1270-188.png) no-repeat;
+          background-size: 635px 94px;
+        }
+
+        .dragon-content .dragon5 {
+          width:99px;
+          height: 94px;
+          left: 205px;
+          z-index: 1;
+          background: url(http://gw.alicdn.com/mt/TB1AzkaLXXXXXbpXVXXXXXXXXXX-1980-188.png) no-repeat;
+          background-size: 990px 94px;
+        }
+
+        .dragon-playing.is-animationed .dragon{
+          -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+          -webkit-animation-timing-function: steps(10);
+          animation-timing-function: steps(10);
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+        }
+        .dragon-playing.is-animationed .dragon1{
+          -webkit-animation-name: dragon-1;
+          animation-name: dragon-1;
+        }
+
+        @keyframes dragon-1 {
+          from{
+            background-position: 0 0;
+          }
+          to{
+            background-position: -881px 0;
+          }
+        }
+        .dragon-content .clud:nth-of-type(an+b){
+
+        }
+
+        .dragon-playing.is-animationed .dragon2{
+          -webkit-animation-name: dragon-2;
+          animation-name: dragon-2;
+        }
+        @keyframes dragon-2 {
+          from{
+            background-position: 0 0;
+          }
+          to{
+            background-position: -590px 0;
+          }
+
+        }
+      .dragon-playing.is-animationed .dragon3 {
+        -webkit-animation-name:dragon-3;
+        animation-name:dragon-3;
+      }
+      .dragon-playing.is-animationed .dragon4 {
+        -webkit-animation-name:dragon-4;
+        animation-name:dragon-4;
+      }
+      .dragon-playing.is-animationed .dragon5 {
+        -webkit-animation-name:dragon-5;
+        animation-name:dragon-5;
+      }
+
+      @-webkit-keyframes dragon-3 {
+        from{
+          background-position: 0 0;
+        }
+        to{
+          background-position:-600px;
+        }
+      }
+      @keyframes dragon-3 {
+        from{
+          background-position: 0 0;
+        }
+        to{
+          background-position:-600px;
+          }
+      }
+      @-webkit-keyframes dragon-4 {
+        from{
+          background-position: 0 0;
+        }
+        to{
+          background-position:-634px;
+          }
+      }
+      @keyframes dragon-4 {
+        from{
+          background-position: 0 0;
+        }
+        to{
+          background-position:-634px;
+          }
+      }
+      @-webkit-keyframes dragon-5 {
+        from{
+          background-position: 0 0;
+        }
+        to{
+          background-position:-990px;
+          }
+      }
+      @keyframes dragon-5 {
+        from{
+          background-position: 0 0;
+        }
+        to{
+          background-position:-990px;
+          }
+      }
+
+      .firecrackers{
+        width: 83px;
+        height: 166px;
+        background: url("http://gw.alicdn.com/mt/TB1zoB3LpXXXXbCXXXXXXXXXXXX-332-332.png") no-repeat;
+        -webkit-background-size: 166px;
+        background-size: 166px;
+        position: absolute;
+        top: 0;
+      }
+
+      .firecrackers.firecrackers-left{
+        left: 0;
+      }
+
+      .firecrackers.firecrackers-right{
+        right: -20px;
+      }
+
+      .firecrackers:after{
+        content: "";
+        width: 61px;
+        height: 45px;
+        position: absolute;
+        bottom: -26.5px;
+        left: 2.5px;
+        background: url(data:image/png;base64,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) no-repeat;
+        -webkit-background-size: 112px 45px;
+        background-size: 112px 45px;
+      }
+      .dragon-playing.is-animationed .firecrackers{
+        -webkit-animation:bianpao .2s steps(2) infinite,bianpao2 6s linear both;
+        animation:bianpao .2s steps(2) infinite,bianpao2 6s linear both;
+
+      }
+      @keyframes bianpao {
+        from{
+          background-position: 0 0;
+        }
+        to{
+          background-position:-166px 0;
+          }
+      }
+      @-webkit-keyframes bianpao2 {
+        from{
+          max-height: 166px;
+        }
+        to{
+          max-height: 0px;
+        }
+      }
+      @keyframes bianpao2 {
+        from{
+          max-height: 166px;
+        }
+        to{
+          max-height: 0px;
+        }
+      }
+      .dragon-playing.is-animationed .firecrackers:after {
+        -webkit-animation:lihua .2s steps(2) infinite,fadeOut .2s linear 6s both;
+        animation:lihua .2s steps(2) infinite,fadeOut .2s linear 6s both;
+      }
+     @keyframes lihua{
+       from{
+         background-position: 0 0;
+       }
+       to{
+         background-position:-122px 0;
+         }
+       }
+
+    </style>*/ -->
+
+
+</head>
+<body>
+    <div class="dragon-poplayer" id="dragon-poplayer">
+        <div class="dragon-section dragon-ready-play" id="dragon-ready-play">
+          <!-- is-animationed添加在上面 -->
+            <div class="dragon-play">
+                <div class="music">
+                    <input type="checkbox" name="music" id="music-control" checked/>
+                    <label for="music-control">声音</label>
+                    <!-- label[for] + input "for" 属性可把 label 绑定到另外一个元素。请把 "for" 属性的值设置为相关元素的 id 属性的值-->
+                </div>
+                <div id="music">
+                    <audio src="//gw.alicdn.com/tfscom/TB1Ydd2LpXXXXaUXFXXsKFbFXXX.mp3" loop="loop"></audio>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 第二场景-->
+        <div class="dragon-section dragon-playing" id="dragon-playing">
+            <div class="dragon-wrap">
+                <div class="dragon-content">
+                    <div class="dragon dragon1"></div>
+                    <div class="dragon dragon2"></div>
+                    <div class="dragon dragon3"></div>
+                    <div class="dragon dragon4"></div>
+                    <div class="dragon dragon5"></div>
+                    <section class="cloud"></section>
+                    <section class="cloud"></section>
+                    <section class="cloud"></section>
+                </div>
+            </div>
+
+            <div class="firecrackers firecrackers-left">
+
+            </div>
+            <div class="firecrackers firecrackers-right">
+
+            </div>
+
+        </div>
+
+        <div id="close"></div>
+
+    </div>
+
+    <script>
+        window.onload = function(){
+            var wantedDragonDance =
+                    document.getElementById('dragon-ready-play'); /*开始层*/
+
+            var switcher = document.getElementById('music');/*musci div audio*/
+            var media = document.getElementsByTagName('audio')[0];/*audio 标签*/
+            var chooseMusic = document.getElementById('music-control');/*静音checkbox*/
+
+            switcher.addEventListener('click',function(){
+                var currentStatus = media.paused ? 'pause':'play';
+
+                var wantedStatus = (currentStatus === 'pause'&& !chooseMusic.checked)?'play':'pause';
+
+                media[wantedStatus]();
+                // 如果wantedDragonDance 没有is-animationed类名，就添加，反之什么也不做
+                if(!wantedDragonDance.classList.contains('is-animationed')){
+                    wantedDragonDance.classList.add('is-animationed');
+                }
+
+            },false);
+
+            /* 动画结束 */
+            wantedDragonDance.addEventListener('webkitAnimationEnd',function(){
+                document.querySelector('#dragon-playing').classList.add('is-animationed');
+            });
+            document.getElementById('close').addEventListener('click',function(){
+                var oPopLayer = document.querySelector('.dragon-poplayer');
+               oPopLayer.parentNode.removeChild(oPopLayer);
+
+            },false);
+            document.querySelector('.firecrackers').addEventListener('webkitAnimationEnd',function(){
+              var oPopLayer = document.querySelector('.dragon-poplayer');
+               oPopLayer.parentNode.removeChild(oPopLayer);
+            },false);
+        }
+    </script>
+</body>
+</html>

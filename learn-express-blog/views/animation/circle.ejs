@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="circle.scss"> -->
+  <style media="screen">
+
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      html,body{
+        width: 100%;
+      }
+    .progress-ring {
+      position: relative;;
+      top: 0;
+      left: 0;
+      height: 130px;
+      width: 130px;
+      border: 1px solid #000;
+    }
+
+      div:not(.progress-ring){
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 130px;
+          width: 130px;
+          border: 16.25px solid #31ae48;
+          border-radius: 50%;
+          box-sizing: border-box;
+      }
+      .progress-track{
+          z-index: -1;
+          /*background-color: #000;*/
+      }
+
+      .progress-ring .progress-left{
+          clip: rect(0 65px 130px 0px);
+          /*background-color: red;*/
+      }
+      .progress-ring .progress-right{
+          clip: rect(0 130px 130px 65px);
+          /*background-color: green;*/
+      }
+      .progress-ring .progress-left,.progress-ring .progress-right {
+          border: 16.25px solid #ffaa05;
+          z-index: 2;
+      }
+      .progress-ring .progress-right {
+          -webkit-animation: 10s tog forwards linear;
+          animation: 10s tog forwards linear;
+      }
+      @keyframes tog {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(180deg);
+        }
+      }
+  </style>
+</head>
+<body>
+  <div class="progress-ring">
+    <div class="progress-track"></div>
+    <div class="progress-left"></div>
+    <div class="progress-right"></div>
+    <!-- <div class="progress-cover"></div> -->
+</div>
+</body>
+</html>

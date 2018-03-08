@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <h2>歌星</h2>
+  <ul id="singer-list"></ul>
+  <h2>歌曲</h2>
+  <ul id="music-list"></ul>
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+
+<script>
+var Book = (function(){
+  var numOfBooks = 0;
+  return function(newIsbn,newTitle,newAuthor) {
+    var isbn,title,author;
+    this.getIsbn = function(){
+      return isbn;
+    }
+    this.setIsbn = function(newIsbn) {
+      isbn = newIsbn
+    }
+    this.getTitle = function() {
+      return title;
+    }
+    this.setTitle = function(newTitle) {
+      title = newTitle || 'No title speified';
+    }
+    this.getAuthor = function(){
+      return author;
+    }
+    this.setAuthor = function(newAuthor) {
+      author = newAuthor || 'No author specified';
+    }
+    this.setIsbn(newIsbn);
+    this.setAuthor(newAuthor);
+    this.setTitle(newTitle);
+  }
+})();
+var book = new Book('123456','Javascript设计模式','曾探');
+
+
+// ----------------------------------
+// var Type = {
+    //
+    //   isArray:function (arr){
+    //     return Object.prototype.toString.call(arr) === "[object Array]"?true:false;
+    //   },
+    //   isNum:function (num){
+    //     return Object.prototype.toString.call(num) === "[object Number]"?true:false;
+    //   },
+    //   isStr:function (str){
+    //     return Object.prototype.toString.call(str) === "[object String]"?true:false;
+    //   }
+    // }
+    var Type = {};
+    for (var i = 0, type; type = ["String","Number","Array"][i++]; ) {
+        //console.log(type);
+        (function (type){
+          Type["is" + type] = function(obj){
+          console.log(type);
+          return Object.prototype.toString.call(obj) === "[object " + type + "]"?true:false;
+
+        }
+      })(type)
+    }
+    var arr = [1,2,3];
+    console.log(Type.isArray(arr));
+    var num = 3;
+    console.log(Type.isNumber(num));
+    // Type["is" + ]
+    // var arr= [1,2,3,4];
+    // //Object.prototype.toString.call(arr);
+    // console.log(Object.prototype.toString.call(arr));
+    // var num = 5;
+    // console.log(Object.prototype.toString.call(num));
+    // var str = "rarara";
+    // console.log(Object.prototype.toString.call(str));
+    //
+    // console.log(isArray(num));
+    // console.log(isNum(num));
+
+// -----------------------------
+
+
+$(function(){
+
+    // callback 请求完成后执行的函数
+    // 参数是函数 函数返回值是函数 高阶编程
+    function searchQqMusic(key,callback){
+      var params = {
+    		is_xml: 0,
+    		format: 'jsonp',
+    		g_tk: 5381,
+    		loginUin: 0,
+    		inCharset: 'utf8',
+    		outCharset: 'utf-8',
+    		notice: 0,
+    		platform: 'yqq',
+    		needNewCode: 0,
+        key:key
+    	}
+
+      $.ajax({
+        'url':'http://c.y.qq.com/splcloud/fcgi-bin/smartbox_new.fcg',
+
+        'type':'GET',
+        jsonp:'jsonpCallback',
+        'dataType':'jsonp',
+        'data':params,
+        success:function(result) {
+          callback(result);
+        },
+        error:function(err){
+          // console.log(err);
+        }
+      })
+    }
+
+    function showSingers(result) {
+        var singers = result.data.singer.itemlist;
+        for(var i = 0,len = singers.length; i < len; i++) {
+          $('<li>'+ singers[i].name +'</li>').appendTo($('#singer-list'));
+        }
+          console.log(result);
+      }
+
+    function showMusic(result){
+      var songs = result.data.song.itemlist;
+      for(var i = 0,len = songs.length; i < len; i++) {
+        $('<li>'+ songs[i].name +'</li>').appendTo($('#music-list'));
+      }
+
+    }
+
+    searchQqMusic('周',showSingers)
+    searchQqMusic('周',showMusic)
+
+})
+
+
+// ------------------------------
+
+var isType = {};
+    for(var i=0,type;type=["Array","String","Number"][i++];){
+      (function (type){
+        isType["is" + type] = function(obj){
+          console.log(type);
+          console.log(obj);
+          return Object.prototype.toString.call(obj) === "[object " + type + "]"?true:false;
+      }
+    })(type)
+    }
+    var arr = [1,2];
+    console.log(isType.isArray(arr));
+
+
+
+
+
+</script>
+</body>
+</html>

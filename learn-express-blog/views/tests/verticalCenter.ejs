@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .box{
+    width: 600px;
+    height: 600px;
+    border: 1px solid #000;
+    background: red;
+  }
+  .ver_cen{
+    background: yellow;
+    width: 200px;
+    height: 200px;
+  }
+  /*方法一 文本对齐*/
+  /*.ver_cen{
+    text-align: center;
+    line-height: 200px;
+  }*/
+
+  /*方法二 文本对齐*/
+  .ver_cen{
+    display:table-cell;
+    vertical-align:middle;
+    text-align: center;
+  }
+
+  /*方法三:*/
+  /*.box{
+    position: relative;
+  }
+  .ver_cen{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }*/
+
+
+  /*方法四*/
+  /*.box{
+    position: relative;
+  }
+  .ver_cen{
+    position: absolute;;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+  }*/
+
+  /*方法五*/
+  /*.box{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+  }*/
+
+  /*方法六*/
+  /*.box{
+    display: flex;
+  }
+  .ver_cen{
+    margin: auto;
+  }*/
+
+  /*一、对于block块级元素,没有设置width，没有float，position
+        1、margin-top: 会向上移动100px
+        2、margin-left:向左增加100px（并向右移动100px，其实没有增加，只是继承关系，width：100%;）
+        3、margin-right:向右增加100px不移动，即右边的内容向右移动100px
+        4、margin-bottom: 下面的内容向上移动100px,并进行覆盖
+      二、对于inline-block与inline元素,没有设置width，没有float，position
+        1、上下没效果
+        2、左向左移动100px,右则右边元素向左移动100px;
+      三、对于block、inline-block与inline块级元素,设置了width，没有float,position
+        1、margin-bottom与margin-left :后面元素向块级元素移动100px并进行覆盖
+        2、margin-top与margin-left :向上左移动100px;
+        3、inline上下没效果,inline-block下没效果*/
+
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p class="ver_cen">
+      test some ways of vertical center;
+    </p>
+  </div>
+  <a href="">a标签的默认display:inline</a>
+  <p>p标签的默认display:block</p>
+  <span>span标签默认display:inline</span>
+  <h1>h1标签的默认display:block</h1>
+  <ul>
+    ul标签的默认display:block
+    <li>li标签的默认display:list-item</li>
+    <li>line元素不占一行,只能通过padding增高</li>
+    <li>block占一行,可自由设置宽高</li>
+    <li>inline-block不占一行,可自由设置宽高</li>
+    <ul>
+      <li>block继承父标签的width,默认100%</li>
+      <li>inline,inline-block靠内容撑起来的</li>
+    </ul>
+  </ul>
+
+  <script type="text/javascript">
+  //摇一摇
+      //device 硬件 motion 运动
+      // if (window.DeviceMotionEvent) {
+      //   var speed = 25;
+      //   var x, y, z, lastX, lastY, lastZ;
+      //   x = y = z = lastX = lastY = lastZ = 0;
+      //   window.addEventListener('devicemotion',function(event){
+      //     //event是在对象发生时产生
+      //     var acceleration = event.accelerationIncludingGravity;
+      //      x = acceleration.x;
+      //      y = acceleration.y;
+      //      if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed) {
+      //         document.getElementById('Btn').classList.add('animated');
+      //         alert('你摇呀，摇呀');
+      //      }
+      //      lastX = x;
+      //      lastY = y;
+      //   },false);
+
+
+  </script>
+</body>
+</html>

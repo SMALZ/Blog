@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        body{
+            -webkit-font-smoothing: antialiased;  /*字体平滑*/
+            -moz-osx-font-smoothing: grayscale;
+            background: #212121;
+            font-family: 'Roboto', Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .donut{
+            position: relative;
+            width: 240px;
+            height: 240px;
+        }
+        .donut__copy{
+          text-align: center;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          padding-top: 68px;
+          top: 0;
+          left: 0;
+        }
+        .donut__title{
+          display: block;
+          color: #8a6fd5;
+          font-weight: 200;
+          font-size: 79px;
+          position: relative;
+          transform: translateX(0);
+          -webkit-animation: donutTitleFadeLeft 2s 200ms linear forwards;
+          animation: donutTitleFadeLeft 2s 200ms linear forwards;
+        }
+        .donut__spic::before{
+          position: absolute;
+          top: 20px;
+          font-size: 30px;
+          line-height: 1em;
+          content: "%";
+          opacity: 0;
+          transform: translateY(-20px);
+          animation: donutTitleFadeRight 800ms 200ms linear forwards;
+        }
+        @keyframes donutTitleFadeRight {
+          from{
+            opacity: 0;
+            transform: translateX(-20px);
+          }
+          to{
+            opacity: 1;
+            transform:translateX(0);
+          }
+        }
+        @-webkit-keyframes donutTitleFadeLeft {
+          from{
+            opacity: 0;
+            transform: translateX(0);
+          }
+          to{
+            opacity: 1;
+            transform: translateX(-10px);
+          }
+        }
+        @keyframes donutTitleFadeLeft {
+          from{
+            opacity: 0;
+            transform: translateX(0);
+          }
+          to{
+            opacity: 1;
+            transform: translateX(-10px);
+          }
+        }
+        .donut_svg{
+          transform: rotate(-90deg);
+        }
+        #donut-graph{
+          stroke-dasharray: 565.48668;
+          stroke-dashoffset: 565.48668;
+          animation: stroke-dasharray 400ms ease-in-out forwards;
+        }
+        @keyframes stroke-dasharray {
+          to{
+            stroke-dashoffset: 101.7876;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="donut">
+        <svg width="240" height="240"
+             xmlns="http://www.w3.org/2000/svg" class="donut_svg">
+            <circle id="donut-graph-x" class="donut__svg__scrim"
+                    cx="120" cy="120" r="90" stroke-width="3" stroke="#333" fill="none">
+            </circle>
+            <circle id="donut-graph" class="donut__svg__circle--one"
+                    cx="120" cy="120" r="90" stroke-width="4" stroke="#8a6fd5" fill="none">
+            </circle>
+        </svg>
+        <div class="donut__copy">
+            <span class="donut__title">82
+            <span class="donut__spic"></span>
+            </span>
+        </div>
+    </div>
+</body>
+<ml>

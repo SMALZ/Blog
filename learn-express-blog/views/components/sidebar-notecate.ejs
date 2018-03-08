@@ -1,0 +1,11 @@
+<div class="post-nav">
+  <div class="panel-title"><a href="#">笔记目录</a></div>
+  <div class="c-panel-body">
+    <ul>
+        <% post.postH.hTitle.forEach(function(title,i) {
+           var itemP = 10 + 10 * (post.postH.hOrder[i] - 1); %>
+            <li class="item-title" id="a-a-<%= i + 1 %>" onclick="Tfocus(this)" style = "padding-left:<%= itemP %>px"><a href="#_a-a-<%= i + 1 %>"><%= title %></a></li>
+        <% }) %>
+    </ul>
+  </div>
+</div>

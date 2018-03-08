@@ -1,0 +1,58 @@
+
+<%- include('header') %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="c-col-md-1 t"></div>
+    <div class="c-col-md-8 t">
+      <h2 class="post-topheader-title"><a href="/blog/<%= post._id %>"><%= post.title %></a></h2>
+      <div class="post-info">
+        <% if(permiSign == 2){ %>
+          <p class="post-author"><a href=""><strong id="userName"><%= user.name %></strong></a></p>
+        <% } else if(permiSign == 1) { %>
+          <p class="post-author"><a href=""><strong id="userName"><%= wo.name %></strong></a></p>
+        <% } else {} %>
+        <p class="post-time"><%= post.time %> 发布</p>
+        <% if(permiSign == 2) { %>
+          <a href="/blog/<%= post._id %>/edit">编辑</a>
+        <% } %>
+      </div>
+      <div class="divider"></div>
+      <pre id="postM"><article class="markdown-body"><%- post.content %></article></pre>
+      <% if(permiSign == 2) { %>
+      <div class="alter-a">
+        <a href="/blog/<%= post._id %>/edit" class="edit-remove">编辑</a>
+        <a href="javascript:;" data-toggle="modal" data-target="#modalRemovePost">删除</a>
+        <div class="modal fade" id="modalRemovePost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">真的要删除这篇博客吗？</div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                      <a href="/blog/<%= post._id %>/remove">
+                        <button type="button" class="btn btn-primary">删除</button>
+                      </a>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+      </div>
+      <% } %>
+        <%- include('components/comments',{avatar:user.avatar, post:post, error:error, comments:comments}) %>
+      <div class="comments-divider"></div>
+    </div>
+    <div class="c-col-md-2 t">
+      <% if(post.postH.hTitle && post.postH.hOrder) { %>
+        <%- include('components/sidebar-notecate',{post:post}) %>
+      <% } %>
+    </div>
+    <div class="c-col-md-1 t"></div>
+  </div>
+</div>
+
+
+
+
+<script src="/js/prism.js"></script>
+<script src="/js/modal.js"></script>
+<script src="/js/ajaxComment.js"></script>
+<%- include('footer') %>

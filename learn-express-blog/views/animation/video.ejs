@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>简单全屏HTML5视屏背景应用</title>
+  <meta name="keywords" content="css3,html5,js,background video,fullscreen video">  <!-- 网页关键字 -->
+  <meta name="description" content="简单全屏HTML5视屏背景应用,只需要引入bidio.js">
+  <style media="screen">
+    *{
+      padding: 0;
+      margin: 0;
+    }
+
+    html,body{
+      height: 100%;
+      /*width: 100%;*/
+      overflow: hidden;
+    }
+
+    #container{
+      overflow: hidden;
+      /*position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;*/
+      width: 100%;
+      height: 100%;
+    }
+
+    #background_video{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    #video_cover{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(/img/bg.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    #video_controls{
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%,0);
+    }
+
+    #play img{
+      width: 100%;
+    }
+
+    #pause img{
+      width: 90px;
+    }
+
+    #pause{
+      display: none;
+    }
+
+    /*只会在ipad 以上的设备显示*/
+    @media(min-width:768px) {
+      #video_controls{
+        display: none;
+      }
+    }
+
+    body{
+      text-align: center;
+      font-family: 'proxima-nova',Helvetica;
+    }
+
+    #container{
+      height: 100%;
+    }
+
+    #overlay{
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <video id="background_video" loop muted></video>
+      <div id="video_cover"></div>
+      <div id="overlay"></div>
+      <div id="video_controls">
+        <span id="play">
+          <img src="/img/play.png" alt="">
+        </span>
+        <span id="pause">
+          <img src="//pause.png" alt="">
+        </span>
+      </div>
+      <section id="main_content">
+        <div id="head">
+          <h1>Bideo.js</h1>
+          <p class="sub_head">A JS library that makes it super easy to add
+            fullscreen background videos.</p>
+          <p class="info">(Hold on! The video might take a while to load.)</p>
+        </div>
+        <div id="links">
+          <a href="">view on Github</a>
+          <a href="">How it works</a>
+        </div>
+      </section>
+  </div>
+  <div id="footer">
+    <a href="">Follow on Twitter</a>
+    <a href="" class="twitter-share-button">Tweet</a>
+    <a href="">Video by shortenit</a>
+  </div>
+  <script type="text/javascript" src="/js/bideo.js"></script>
+  <script type="text/javascript">
+    // 全屏视频对象
+    var bv = new Bideo();
+       bv.init({
+           videoEl:document.querySelector('#background_video'),
+           container:document.querySelector('body'),
+           resize:true,
+           playButton:document.querySelector('#play'),
+           pauseButton:document.querySelector('#pause'),
+           src:[{
+               src:'http://ossweb-img.qq.com/images/lol/v1/banner/big-v8.mp4',
+               type:'video/mp4'
+           },{
+               src:'/video/night.mp4',
+               type:'video/webm;codecs="vp8,vorbis"'
+           }],
+           onLoad:function(){
+               document.querySelector('#video_cover').style.display = 'none';
+           }
+       });
+
+  </script>
+</body>
+</html>
