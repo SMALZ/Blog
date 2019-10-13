@@ -1,7 +1,7 @@
 // 代码将表设计表达
 var config = require('config-lite');
 // mongodb的驱动
-var Mongolass = require('Mongolass');
+var Mongolass = require('mongolass');
 var mongolass = new Mongolass();
 
 //运行环境，选择不同的服务器
